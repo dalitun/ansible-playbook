@@ -8,11 +8,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/db.heat.yaml" afterPath="$PROJECT_DIR$/heat/db.heat.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" afterPath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/node.heat.yaml" afterPath="$PROJECT_DIR$/heat/node.heat.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pre-setup.yml" afterPath="$PROJECT_DIR$/pre-setup.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/db/tasks/setup-Redhat.yml" afterPath="$PROJECT_DIR$/roles/db/tasks/setup-Redhat.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/db/tasks/replication.yml" afterPath="$PROJECT_DIR$/roles/db/tasks/replication.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,11 +51,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup-Redhat.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="node.heat.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.74074">
+              <caret line="154" column="23" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup-Redhat.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/roles/db/tasks/setup-Redhat.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48579547">
+            <state vertical-scroll-proportion="-12.666667">
               <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="replication.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/roles/db/tasks/replication.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.025568182">
+              <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="glusterfs.heat.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6666667">
+              <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -72,12 +100,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
-        <option value="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
         <option value="$PROJECT_DIR$/glusterfs.yml" />
-        <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/db.heat.yaml" />
         <option value="$PROJECT_DIR$/pre-setup.yml" />
         <option value="$PROJECT_DIR$/roles/db/tasks/setup-Redhat.yml" />
+        <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
+        <option value="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
+        <option value="$PROJECT_DIR$/roles/db/tasks/replication.yml" />
       </list>
     </option>
   </component>
@@ -414,14 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79545456">
-          <caret line="119" column="124" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="124" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -434,14 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17897727">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625">
-          <caret line="87" column="22" selection-start-line="84" selection-start-column="18" selection-end-line="88" selection-end-column="121" />
           <folding />
         </state>
       </provider>
@@ -478,10 +491,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.74074">
+          <caret line="154" column="23" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6666667">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/roles/db/tasks/setup-Redhat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48579547">
+        <state vertical-scroll-proportion="-12.666667">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/db/tasks/replication.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025568182">
+          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
           <folding />
         </state>
       </provider>
