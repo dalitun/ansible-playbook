@@ -10,7 +10,7 @@
       shell: mkdir /nodejs
     - name: deploy node
       shell: git clone {{ Application_source }} /nodejs/tmp && mv /nodejs/tmp/* /nodejs/ && rm -rf /nodejs/tmp
-
+      when: gluster_ip  == '10.0.0.120'
     - name: launch app
       shell: node /nodejs/app.js &
 

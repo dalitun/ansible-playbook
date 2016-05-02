@@ -8,4 +8,4 @@
   tasks:
     - name: Deploy war
       get_url: url={{ Application_source }} dest=/usr/share/tomcat/webapps/myapp.war validate_certs=False
- 
+      when: gluster_ip  == '10.0.0.120'
