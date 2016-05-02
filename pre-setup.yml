@@ -19,11 +19,11 @@
       state: mounted
 
 
-- name: Wait until SSH is available
-  local_action:
-    module: wait_for
-    host: "{{ gluster_ip }}"
-    port: 24007
-    delay: 60
-    timeout: 320
-    state: started
+   - name: Wait until SSH is available
+     local_action:
+       module: wait_for
+       host: "{{ gluster_ip }}"
+       port: 24007
+       delay: 60
+       timeout: 320
+       state: started
