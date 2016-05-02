@@ -13,9 +13,6 @@
 - name: change the master in slave to start the replication
   shell: mysql -u root -e "CHANGE MASTER TO MASTER_HOST = '{{ master_ip }}', MASTER_USER = 'repl', MASTER_PASSWORD = '{{ db_admin_password }}',MASTER_LOG_POS = {{ repl_stat.Position }}"
 
-
 - name: start slave
-  mysql_replication: mode=startslave 
+  mysql_replication: mode=startslave
 
-- name: post setup
-  include: post-setup.yml
