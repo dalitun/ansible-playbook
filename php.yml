@@ -9,4 +9,4 @@
 
     - name: deploy php
       shell: git clone {{ Application_source }} /var/www/html/tmp && mv /var/www/html/tmp/* /var/www/html/ && rm -rf /var/www/html/tmp
-      when: {{ gluster_ip }} == 10.0.0.120
+      when: gluster_ip  == '10.0.0.120'

@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="php.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="php.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28125">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state vertical-scroll-proportion="-7.3333335">
+              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -59,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.heat.yaml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="node.heat.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0">
+            <state vertical-scroll-proportion="1.0326705">
               <caret line="107" column="117" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="120" />
               <folding />
             </state>
@@ -74,16 +74,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.6666665">
               <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glusterfs.heat.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.407408">
-              <caret line="119" column="45" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -595,14 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/apache/tasks/setup-Debian.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pre-setup.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.666666">
@@ -627,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0">
-          <caret line="107" column="117" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/group_vars/all">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -651,6 +625,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78267044">
+          <caret line="119" column="45" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/glusterfs.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6666665">
@@ -659,18 +641,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+    <entry file="file://$PROJECT_DIR$/roles/apache/tasks/setup-Debian.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.407408">
-          <caret line="119" column="45" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28125">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state vertical-scroll-proportion="-7.3333335">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0326705">
+          <caret line="107" column="117" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="120" />
           <folding />
         </state>
       </provider>
