@@ -120,7 +120,7 @@ resources:
                    lv_name: global
                    lv_size : 8g
                   EOF
-                   if [ "$os" =="Debian Jessie" ]
+                   if [ "$os" == "Debian Jessie" ]
                   then
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
                   else
@@ -168,7 +168,7 @@ resources:
                    lv_size : 8g
                   EOF
 
-                   if [ "$os" =="Debian Jessie" ]
+                   if [ "$os" == "Debian Jessie" ]
                   then
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
                   else

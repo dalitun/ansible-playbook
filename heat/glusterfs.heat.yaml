@@ -82,7 +82,7 @@ resources:
                    clusters: 10.0.0.120,10.0.0.130
                    gluster_master: 10.0.0.120
                   EOF
-                  if [ "$os" =="Debian Jessie" ]
+                  if [ "$os" == "Debian Jessie" ]
                   then
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git glusterfs.yml -e @/etc/ansible/vars.yml
                   else
@@ -119,7 +119,7 @@ resources:
                    clusters: 10.0.0.120,10.0.0.130
                    gluster_master: 10.0.0.120
                   EOF
-                  if [ "$os" =="Debian Jessie" ]
+                  if [ "$os" == "Debian Jessie" ]
                   then
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git glusterfs.yml -e @/etc/ansible/vars.yml
                   else
