@@ -23,6 +23,7 @@
 
 - name: add repo debian
   shell: |
+            cd /tmp
             wget -O mysql-apt-config.deb https://dev.mysql.com/get/mysql-apt-config_0.3.7-1debian8_all.deb
             sudo dpkg -i mysql-apt-config.deb
   when: ansible_distribution == 'Debian'
