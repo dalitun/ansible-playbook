@@ -10,7 +10,7 @@
    - name: create Application
      file: path={{ app_directory }} state=directory recurse=yes mode=0755
    - name: mount
-      mount:
+     mount:
       name: "{{ app_directory }}"
       src: "{{ gluster_ip }}:/gluster"
       fstype: glusterfs

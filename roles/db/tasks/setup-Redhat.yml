@@ -15,6 +15,9 @@
   when: database_type == 'mariadb'
 
 
+- name: install  repo mysql
+  yum: name=http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm state=present
+  when: database_type == 'mysql'
 
 - name: Install MySQL
   yum: name=mysql-server state=installed

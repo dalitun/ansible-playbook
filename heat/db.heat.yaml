@@ -125,6 +125,7 @@ resources:
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
                   else
                   ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
+                  fi
           params:
                 $db_type: { get_param: db_type }
                 $db_name: { get_param: db_name}
@@ -172,7 +173,7 @@ resources:
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
                   else
                   ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
-
+                  fi
 
 
 
