@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17993a94-98e3-4955-89cd-ea127192c23f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/ansible-playbook.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glusterfs.yml" afterPath="$PROJECT_DIR$/glusterfs.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" afterPath="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/db.heat.yaml" afterPath="$PROJECT_DIR$/heat/db.heat.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" afterPath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/node.heat.yaml" afterPath="$PROJECT_DIR$/heat/node.heat.yaml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,18 +37,8 @@
       <file leaf-file-name="bundle-3tiers.heat.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heat/bundle-3tiers.heat.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="117.14815">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.heat.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84659094">
-              <caret line="163" column="90" selection-start-line="163" selection-start-column="90" selection-end-line="163" selection-end-column="90" />
+            <state vertical-scroll-proportion="-10.666667">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -46,8 +47,38 @@
       <file leaf-file-name="glusterfs.heat.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.4074075">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.296297">
+              <caret line="87" column="22" selection-start-line="84" selection-start-column="18" selection-end-line="88" selection-end-column="121" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="glusterfs.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/glusterfs.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6666665">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup-Redhat.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,8 +87,18 @@
       <file leaf-file-name="node.heat.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.777778">
-              <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
+            <state vertical-scroll-proportion="-19.74074">
+              <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.heat.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="14.259259">
+              <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -71,9 +112,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
+        <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
         <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
+        <option value="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/db.heat.yaml" />
+        <option value="$PROJECT_DIR$/glusterfs.yml" />
       </list>
     </option>
   </component>
@@ -138,7 +181,75 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="roles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="roles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="roles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="heat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="group_vars" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,7 +407,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1602" height="853" extended-state="7" />
+    <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -326,34 +437,82 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/heat/bundle-3tiers.heat.yml">
+    <entry file="file://$PROJECT_DIR$/php.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="117.14815">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+    <entry file="file://$PROJECT_DIR$/group_vars/all">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4074075">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heat/bundle-3tiers.heat.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.777778">
-          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
+        <state vertical-scroll-proportion="-19.74074">
+          <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.296297">
+          <caret line="87" column="22" selection-start-line="84" selection-start-column="18" selection-end-line="88" selection-end-column="121" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84659094">
-          <caret line="163" column="90" selection-start-line="163" selection-start-column="90" selection-end-line="163" selection-end-column="90" />
+        <state vertical-scroll-proportion="14.259259">
+          <caret line="132" column="43" selection-start-line="132" selection-start-column="43" selection-end-line="132" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glusterfs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6666665">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

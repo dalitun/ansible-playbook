@@ -167,8 +167,21 @@ resources:
         - { direction: egress, protocol: UDP }
 
 
+
+  glusterfs_nodes:
+     type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/glusterfs.heat.yaml
+     properties:
+        security_group: { get_resource: sg_glusterfs }
+        network: { get_resource: nodes_net }
+        subnet: { get_resource: nodes_subnet }
+        keypair_name: { get_param: keypair_name }
+        flavor_name: { get_param: flavor_name }
+        os_type: { get_param: os_type }
+
+
+
   db_nodes:
-      type: https://raw.githubusercontent.com/dalitun/blueprint/master/output/db.heat.yaml
+      type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/db.heat.yaml
       properties:
          security_group: { get_resource: sg_db }
          network: { get_resource: db_net }
@@ -181,22 +194,13 @@ resources:
          db_admin: { get_param: database_admin }
          db_admin_password: { get_param: database_admin_password }
 
-  glusterfs_nodes:
-     type: https://raw.githubusercontent.com/dalitun/blueprint/master/output/glusterfs.heat.yaml
-     properties:
-        security_group: { get_resource: sg_glusterfs }
-        network: { get_resource: nodes_net }
-        subnet: { get_resource: nodes_subnet }
-        keypair_name: { get_param: keypair_name }
-        flavor_name: { get_param: flavor_name }
-        os_type: { get_param: os_type }
 
   web_nodes:
     type: OS::Heat::ResourceGroup
     properties:
       count: { get_param: nodes_number}
       resource_def:
-        type: https://raw.githubusercontent.com/dalitun/blueprint/master/output/node.heat.yaml
+        type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/node.heat.yaml
         properties:
           nodename:
             str_replace:
