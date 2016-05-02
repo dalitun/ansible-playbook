@@ -14,9 +14,14 @@
 - name: Install glusterfs client  packages Redhat
   yum: name={{item}} state=installed enablerepo="glusterfs-epel"
   with_items:
+     - libselinux-python
      - glusterfs
      - glusterfs-fuse
 
+
+
+- name: Set selinux into 'permissive' mode.
+  selinux: policy=targeted state=permissive
 
 - name: Ensure build dependencies are installed (RedHat).
   yum: 'name="{{ item }}" state=present'

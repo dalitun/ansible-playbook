@@ -2,8 +2,8 @@
 
 #84.39.43.63 ansible_ssh_user=cloud ansible_ssh_private_key_file=~/.ssh/testfr2.pem
 #84.39.45.119  ansible_ssh_user=cloud ansible_ssh_private_key_file=~/.ssh/dali1.pem
-52.38.136.14  ansible_ssh_user=centos ansible_ssh_private_key_file=~/.ssh/awsdali.pem
-#84.39.36.140 ansible_ssh_user=cloud ansible_ssh_private_key_file=~/.ssh/dali1.pem
+#52.38.136.14  ansible_ssh_user=centos ansible_ssh_private_key_file=~/.ssh/awsdali.pem
+84.39.32.80 ansible_ssh_user=cloud ansible_ssh_private_key_file=~/.ssh/dali1.pem
 
 #10.0.0.120 ansible_ssh_user=vagrant  ansible_ssh_pass=vagrant
 #10.0.0.130 ansible_ssh_user=vagrant   ansible_ssh_pass=vagrant
