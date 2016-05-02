@@ -7,7 +7,7 @@ parameters:
     label: SSH Keypair
     type: string
  os_type:
-    default: Ubuntu 14.04
+    default: Centos 7.2
     description: os type
     label: os type
     type: string
@@ -17,7 +17,7 @@ parameters:
           - Debian Jessie
           - Centos 7.2
  Application_type:
-    default: php5
+    default: tomcat
     description: Application type
     label: Application type
     type: string
@@ -27,7 +27,7 @@ parameters:
           - tomcat
           - nodejs
  Application_source:
-    default: https://github.com/dalitun/cw-bundle-lamp.git
+    default: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
     description: url for your application php , war or nodejs
     label: url for your application php , war or nodejs
     type: string
