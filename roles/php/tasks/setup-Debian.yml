@@ -1,0 +1,9 @@
+- name: packages installed
+  apt: pkg={{ item }} state=present
+  with_items:
+    - php5
+    - libapache2-mod-php5
+    - php5-mysql
+    - php5-xmlrpc
+    - php5-gd
+

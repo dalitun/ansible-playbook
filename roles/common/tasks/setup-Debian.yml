@@ -1,0 +1,11 @@
+- name: apt-get update & upgrade
+  apt: upgrade=full update_cache=yes
+
+- name: install common packages
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - glusterfs-client
+    - git
+

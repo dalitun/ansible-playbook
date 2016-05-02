@@ -1,0 +1,29 @@
+#on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
+
+pv_disk: /dev/vdb
+vg_name: vg0
+lv_name: global
+lv_size : 20G
+
+database_type: "mysql"
+server_id: 1
+db_name: test
+db_admin: admin
+db_admin_password: changeme
+master_ip: 10.0.0.103
+
+
+gluster_mount_dir: /mnt/gluster
+gluster_brick_dir: /srv/gluster/brick
+gluster_brick_name: gluster
+clusters: 10.0.0.120,10.0.0.130
+gluster_master: 10.0.0.120
+
+
+gluster_ip: 10.0.0.120
+#Application_source: https://github.com/dalitun/cw-bundle-lamp.git
+#Application_source: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+Application_source: https://github.com/dalitun/node-hello-world.git
+#app_directory: /opt/tomcat
+#app_directory: /var/www/html
+app_directory: /nodejs

@@ -1,0 +1,17 @@
+---
+# Requires Ansible >= 1.9
+- hosts: all
+  user: cloud
+  become: true
+  pre_tasks:
+    - name: setenforce 0
+      shell: setenforce 0
+      when: ansible_os_family == "RedHat"
+    - name: change conf selinux Redhat
+      lineinfile: dest=/etc/selinux/config  regexp="^SELINUX=" line="SELINUX=disabled"
+      when: ansible_os_family == "RedHat"
+
+  roles:
+    - glusterfs
+
+  

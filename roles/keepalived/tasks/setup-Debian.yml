@@ -1,0 +1,2 @@
+- name: keepalived install
+  apt: name=keepalived state=latest update_cache=yes

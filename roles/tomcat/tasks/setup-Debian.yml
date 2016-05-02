@@ -1,0 +1,35 @@
+- name: installing repo for Java 8 in Ubuntu
+  apt_repository: repo='ppa:openjdk-r/ppa' state=present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: installing repo for Java 8 in Debian
+  apt_repository: repo='deb http://http.debian.net/debian jessie-backports main' state=present
+  when: ansible_distribution == 'Debian'
+- name: update
+  apt: update_cache=yes
+
+- name: packages installed
+  apt: pkg={{ item }} state=present
+  with_items:
+    - openjdk-8-jdk
+    - apache2
+
+- name: Symlink java
+  file: src=/usr/lib/jvm/java-8-openjdk-amd64 path=/usr/lib/jvm/java state=link
+
+- name: apache2 service state
+  service: name=apache2 enabled=yes
+
+- name: apache site configuration
+  copy:
+     src=files/cw.vhost.debian.conf
+     dest=/etc/apache2/sites-available/cw.vhost.conf
+     owner=root
+     group=root
+     mode=0644
+
+- name: enable apache site
+  shell: /usr/sbin/a2dissite 000-default && /usr/sbin/a2ensite cw.vhost.conf && /usr/sbin/a2enmod proxy proxy_ajp && /usr/sbin/a2enmod rewrite
+  notify: restart apache
+
+

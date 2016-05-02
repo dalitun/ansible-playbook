@@ -1,0 +1,33 @@
+
+- name: Install MySQL-python
+  yum: name=MySQL-python state=installed
+
+
+- name: Install repo Mariadb
+  shell: wget -O /etc/yum.repos.d/MariaDB.repo http://mariadb.if-not-true-then-false.com/rhel/$(rpm -E %rhel)/$(uname -i)/10_1
+  when: database_type == 'mariadb'
+
+- name: packages installed
+  yum: pkg={{ item }} state=present
+  with_items:
+    - MariaDB
+    - MariaDB-server
+  when: database_type == 'mariadb'
+
+
+
+- name: Install MySQL
+  yum: name=mysql-server state=installed
+  when: database_type == 'mysql'
+
+- name: start mysqld
+  service: name=mysqld state=started enabled=yes
+
+- name: Copy my.cnf override files into include directory.
+  template: src=my.cnf.j2 dest=/etc/my.cnf
+
+- name: restart mysqld
+  service: name=mysqld state=restarted enabled=yes
+
+
+

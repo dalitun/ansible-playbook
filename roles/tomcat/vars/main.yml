@@ -1,0 +1,2 @@
+Application_source: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+gluster_ip: 10.0.0.120

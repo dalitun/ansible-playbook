@@ -1,0 +1,11 @@
+---
+- hosts: all
+  user: cloud
+  become: true
+  pre_tasks:
+  roles:
+    - tomcat
+  tasks:
+    - name: Deploy war
+      get_url: url={{ Application_source }} dest=/usr/share/tomcat/webapps/myapp.war validate_certs=False
+ 

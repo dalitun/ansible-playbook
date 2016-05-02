@@ -1,0 +1,16 @@
+---
+- hosts: all
+  user: cloud
+  become: true
+  roles:
+    - nodejs
+  tasks:
+
+    - name : create nodejs folder
+      shell: mkdir /nodejs
+    - name: deploy node
+      shell: git clone {{ Application_source }} /nodejs/tmp && mv /nodejs/tmp/* /nodejs/ && rm -rf /nodejs/tmp
+
+    - name: launch app
+      shell: node /nodejs/app.js &
+

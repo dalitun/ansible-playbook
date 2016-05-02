@@ -1,0 +1,3 @@
+---
+Application_source: https://github.com/dalitun/node-hello-world.git
+gluster_ip: 10.0.0.120

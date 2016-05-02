@@ -1,0 +1,2 @@
+- name: keepalived install
+  yum: name=keepalived state=latest update_cache=yes

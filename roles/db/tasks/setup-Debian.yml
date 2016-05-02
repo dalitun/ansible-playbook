@@ -1,0 +1,48 @@
+- name: Install MySQL package
+  apt: pkg=software-properties-common state=installed
+
+- name: Install python module
+  apt: name=python-mysqldb state=installed
+
+- name: Add repository key to the system on Debian family
+  apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
+  when: database_type == 'mariadb'
+
+- name: Install MariaDB repository family
+  apt_repository: repo='deb [arch=amd64,i386] http://mirror6.layerjet.com/mariadb/repo/10.1/{{ ansible_distribution }} {{ ansible_distribution_release }} main' state=present
+  when: database_type == 'mariadb'
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: Install MariaDB Server
+  apt: name=mariadb-server state=latest update_cache=yes
+  when: database_type == 'mariadb'
+
+
+
+ - name: add repo debian
+   shell: |
+            wget -O mysql-apt-config.deb https://dev.mysql.com/get/mysql-apt-config_0.3.7-1debian8_all.deb
+            sudo dpkg -i mysql-apt-config.deb
+   when: ansible_distribution == 'Debian'
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: Install MySQL packages
+  apt: pkg=mysql-server-5.6 state=installed
+
+
+
+
+
+
+  when: database_type == 'mysql'
+
+
+- name: Modify configuration file to listen on all interfaces
+  template: src=my.cnf.j2 dest=/etc/mysql/my.cnf
+
+- name: restart mysql
+  service: name=mysql state=restarted enabled=yes

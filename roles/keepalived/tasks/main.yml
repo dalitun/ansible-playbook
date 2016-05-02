@@ -1,0 +1,24 @@
+---
+
+- name: keepalived install on RedHat
+  yum: name=keepalived state=latest update_cache=yes
+  when: ansible_os_family == 'RedHat'
+
+- name: keepalived install on Debian
+  apt: name=keepalived state=latest update_cache=yes
+  when: ansible_os_family == 'Debian'
+
+- name: config sysctl
+  sysctl: name=net.ipv4.ip_nonlocal_bind value=1 state=present reload=yes
+
+
+- name: copy check_mysql.sh
+  template: src=check_mysql.sh.j2 dest=/etc/keepalived/check_mysql.sh mode=0755
+
+- name: add template keepalived
+  template: src=keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf
+  notify:
+    - restart keepalived
+
+- name: enabled service
+  service: name=keepalived state=restarted enabled=yes

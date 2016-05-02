@@ -1,0 +1,21 @@
+- name: packages installed
+  yum: name={{ item }} state=present
+  with_items:
+   - java-1.8.0-openjdk
+   - httpd
+
+- name: Symlink java
+  file: src=/usr/lib/jvm/jre-openjdk path=/usr/lib/jvm/java state=link
+
+- name: httpd service state
+  service: name=httpd enabled=yes
+
+- name: httpd site configuration
+  copy:
+     src=files/cw.vhost.redhat.conf
+     dest=/etc/httpd/conf.d/cw.vhost.conf
+     owner=root
+     group=root
+     mode=0644
+  notify: restart httpd
+

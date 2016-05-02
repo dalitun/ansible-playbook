@@ -1,0 +1,18 @@
+---
+# Requires Ansible >= 1.9
+- hosts: all
+  user: cloud
+  become: true
+  pre_tasks:
+
+    - name: apt-get update & upgrade
+      apt: update_cache=yes
+      when: ansible_os_family == 'Debian'
+
+    - name: upgrade all packages
+      yum: name=* state=latest
+      when: ansible_os_family == 'RedHat'
+  roles:
+    - db
+    - keepalived
+

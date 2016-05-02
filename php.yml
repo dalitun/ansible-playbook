@@ -1,0 +1,11 @@
+---
+- hosts: all
+  user: cloud
+  become: true
+  roles:
+    - apache
+    - php
+  tasks:
+
+    - name: deploy php
+      shell: git clone {{ Application_source }} /var/www/html/tmp && mv /var/www/html/tmp/* /var/www/html/ && rm -rf /var/www/html/tmp

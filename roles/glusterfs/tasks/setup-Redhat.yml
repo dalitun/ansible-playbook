@@ -1,0 +1,20 @@
+- name: upgrade all packages
+  yum: name=* state=latest
+
+- name: Fetch glusterfs repo file
+  get_url: dest=/etc/yum.repos.d/glusterfs-epel.repo
+           url=http://download.gluster.org/pub/gluster/glusterfs/LATEST/EPEL.repo/glusterfs-epel.repo
+
+- name: Set repo file permissions
+  file: owner=root group=root mode=0644
+        path=/etc/yum.repos.d/glusterfs-epel.repo
+
+- name: Install glusterfs server packages (CentOS)
+  yum: name={{item}} state=installed enablerepo="glusterfs-epel"
+  with_items:
+     - glusterfs-server
+     - glusterfs
+     - glusterfs-fuse
+
+- name: Ensure the GlusterFS service is running (CentOS)
+  service: name=glusterd state=started

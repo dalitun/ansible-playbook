@@ -1,0 +1,11 @@
+database_type: "mysql"
+server_id: 2
+db_name: test
+db_admin: admin
+db_admin_password: changeme
+master_ip: 10.0.1.2
+#on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
+pv_disk: /dev/vdb
+vg_name: vg0
+lv_name: global
+lv_size : 8g
