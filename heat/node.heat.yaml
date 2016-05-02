@@ -94,7 +94,7 @@ resources:
               "php5")
                       echo "    app_directory: /var/www/html" >> /etc/ansible/vars.yml
 
-                      if [ "$os" == "Debian Jessie"]
+                      if [ "$os" == "Debian Jessie"] ;
                        then
                        /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
 
@@ -110,7 +110,7 @@ resources:
               "tomcat")
                         echo "    app_directory: /opt/tomcat" >> /etc/ansible/vars.yml
 
-                        if [ "$os" == "Debian Jessie" ]
+                        if [ "$os" == "Debian Jessie" ] ;
                         then
                         /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
 
@@ -124,7 +124,7 @@ resources:
                                       ;;
               "nodejs") echo "    app_directory: /nodejs" >> /etc/ansible/vars.yml
 
-                        if [ "$os" == "Debian Jessie" ]
+                        if [ "$os" == "Debian Jessie" ] ;
                         then
                          /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
 
