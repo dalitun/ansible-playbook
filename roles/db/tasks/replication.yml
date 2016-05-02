@@ -15,7 +15,7 @@
 
 
 - name: start slave
-  mysql_replication: mode=startslave login_user=root login_password=12345678
+  mysql_replication: mode=startslave 
 
 - name: post setup
   include: post-setup.yml

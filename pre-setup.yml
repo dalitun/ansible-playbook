@@ -16,5 +16,8 @@
       fstype: glusterfs
       opts: "defaults,_netdev"
       state: mounted
+   - name: wait for gluster
+     wait_for: host={{ gluster_ip }} port=24007 delay=40 state=drained
+
 
 
