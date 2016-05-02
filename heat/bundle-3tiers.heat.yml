@@ -1,0 +1,257 @@
+heat_template_version: 2013-05-23
+
+description: All-in-one Blueprint
+parameters:
+ keypair_name:
+    description: Keypair to inject in instance
+    label: SSH Keypair
+    type: string
+ os_type:
+    default: Centos 7.2
+    description: os type
+    label: os type
+    type: string
+    constraints:
+      - allowed_values:
+          - Ubuntu 14.04
+          - Debian Jessie
+          - Centos 7.2
+ Application_type:
+    default: php5
+    description: Application type
+    label: Application type
+    type: string
+    constraints:
+      - allowed_values:
+          - php5
+          - tomcat
+          - nodejs
+ Application_source:
+    default: https://github.com/dalitun/cw-bundle-lamp.git
+    description: url for your application php , war or nodejs
+    label: url for your application php , war or nodejs
+    type: string
+
+ nodes_number:
+    default: 2
+    description: number of web servers 10 nodes
+    label: number of nodes
+    type: number
+    constraints:
+      - range: { min: 2, max: 8 }
+ flavor_name:
+    default: n2.cw.standard-1
+    description: Flavor to use for the deployed instance
+    type: string
+    label: Instance Type (Flavor)
+    constraints:
+      - allowed_values:
+          - s1.cw.small-1
+          - n2.cw.standard-1
+          - n2.cw.standard-2
+          - n1.cw.standard-4
+          - n1.cw.standard-8
+          - n1.cw.standard-12
+          - n1.cw.standard-16
+          - n1.cw.highmem-4
+
+ database_type:
+    default: mysql
+    description: database type
+    type: string
+    constraints:
+      - allowed_values:
+          - mysql
+          - mariadb
+
+
+ database_name:
+    default: mytrip
+    description: database type
+    type: string
+
+ database_admin:
+    default: admin
+    description: database type
+    type: string
+
+
+ database_admin_password:
+    default: changeme
+    description: database password admin
+    label: database password admin
+    type: string
+
+resources:
+  db_net:
+    type: OS::Neutron::Net
+
+  db_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      network_id: { get_resource: db_net }
+      cidr: 10.0.1.0/24
+      gateway_ip: 10.0.1.1
+  nodes_net:
+    type: OS::Neutron::Net
+
+  nodes_subnet:
+    type: OS::Neutron::Subnet
+    properties:
+      network_id: { get_resource: nodes_net }
+      ip_version: 4
+      cidr: 10.0.0.0/24
+      allocation_pools:
+        - { start: 10.0.0.100, end: 10.0.0.199 }
+
+  router:
+    type: OS::Neutron::Router
+    properties:
+      admin_state_up: true
+      external_gateway_info:
+        enable_snat: true
+        network: "public"
+
+  router1_interface:
+    type: OS::Neutron::RouterInterface
+    properties:
+      router_id: { get_resource : router }
+      subnet_id: { get_resource : nodes_subnet }
+
+  router2_interface:
+    type: OS::Neutron::RouterInterface
+    properties:
+      router_id: { get_resource : router }
+      subnet_id: { get_resource : db_subnet }
+
+
+  sg_web:
+    type: OS::Neutron::SecurityGroup
+    properties:
+      rules:
+        - { direction: ingress, protocol: TCP, port_range_min: 22, port_range_max: 22 }
+        - { direction: ingress, protocol: TCP, port_range_min: 80, port_range_max: 80 }
+        - { direction: ingress, protocol: TCP, port_range_min: 443, port_range_max: 443 }
+        - { direction: ingress, protocol: ICMP }
+        - { direction: egress, protocol: ICMP }
+        - { direction: egress, protocol: TCP }
+        - { direction: egress, protocol: UDP }
+
+
+  sg_db:
+    type: OS::Neutron::SecurityGroup
+    properties:
+      rules:
+        - { direction: ingress, protocol: TCP, port_range_min: 22, port_range_max: 22 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min: 3306, port_range_max: 3306 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [db_subnet, cidr] },protocol: TCP, port_range_min: 3306, port_range_max: 3306 }
+        - { direction: ingress, protocol: ICMP }
+        - { direction: egress, protocol: ICMP }
+        - { direction: egress, protocol: TCP }
+        - { direction: egress, protocol: UDP }
+
+  sg_glusterfs:
+    type: OS::Neutron::SecurityGroup
+    properties:
+      rules:
+        - { direction: ingress, protocol: TCP, port_range_min: 22, port_range_max: 22 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min: 24007 , port_range_max: 24007 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min: 111 , port_range_max: 111 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min: 2049   , port_range_max: 2049 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min: 38465 , port_range_max: 38469 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min:  49152 , port_range_max:  49152 }
+        - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: UDP, port_range_min: 111 , port_range_max: 111 }
+        - { direction: ingress, protocol: ICMP }
+        - { direction: egress, protocol: ICMP }
+        - { direction: egress, protocol: TCP }
+        - { direction: egress, protocol: UDP }
+
+
+  db_nodes:
+      type: https://raw.githubusercontent.com/dalitun/blueprint/master/output/db.heat.yaml
+      properties:
+         security_group: { get_resource: sg_db }
+         network: { get_resource: db_net }
+         subnet: { get_resource: db_subnet}
+         keypair_name: { get_param: keypair_name }
+         flavor_name: { get_param: flavor_name }
+         os_type: { get_param: os_type }
+         db_type: { get_param: database_type }
+         db_name: { get_param: database_name }
+         db_admin: { get_param: database_admin }
+         db_admin_password: { get_param: database_admin_password }
+
+  glusterfs_nodes:
+     type: https://raw.githubusercontent.com/dalitun/blueprint/master/output/glusterfs.heat.yaml
+     properties:
+        security_group: { get_resource: sg_glusterfs }
+        network: { get_resource: nodes_net }
+        subnet: { get_resource: nodes_subnet }
+        keypair_name: { get_param: keypair_name }
+        flavor_name: { get_param: flavor_name }
+        os_type: { get_param: os_type }
+
+  web_nodes:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: { get_param: nodes_number}
+      resource_def:
+        type: https://raw.githubusercontent.com/dalitun/blueprint/master/output/node.heat.yaml
+        properties:
+          nodename:
+            str_replace:
+               template: $stack-web-%index%
+               params:
+                  $stack: { get_param: 'OS::stack_name' }
+          security_group: { get_resource: sg_web }
+          network: { get_resource: nodes_net }
+          subnet: {get_resource: nodes_subnet }
+          pool_id: {get_resource: pool}
+          index: "%index%"
+          keypair_name: { get_param: keypair_name }
+          flavor_name: { get_param: flavor_name }
+          os_type: { get_param: os_type }
+          Application_type: { get_param: Application_type }
+          Application_source: { get_param: Application_source }
+
+
+#--------------------------#
+# Load Balancer properties #
+#--------------------------#
+  pool:
+    type: OS::Neutron::Pool
+    properties:
+      name: mypool1
+      protocol: TCP
+      lb_method: ROUND_ROBIN
+      subnet: { get_resource: nodes_subnet }
+      vip: {"protocol_port": 80}
+
+  floating_ip:
+    type: OS::Neutron::FloatingIP
+    properties:
+        floating_network_id: b5dd7532-1533-4b9c-8bf9-e66631a9be1d
+
+  vip_floating:
+    type: OS::Neutron::FloatingIPAssociation
+    properties:
+      floatingip_id: { get_resource: floating_ip }
+      port_id: { get_attr: [pool, vip, port_id] }
+
+  lb:
+    type: OS::Neutron::LoadBalancer
+    properties:
+      pool_id: { get_resource: pool }
+      protocol_port: 80
+
+#---------#
+# Outputs #
+#---------#
+outputs:
+  FloatingIP:
+    description: Service public VIP
+    value: { get_attr: [floating_ip, floating_ip_address] }
+  VIP:
+    description: Internal VIP
+    value: { get_attr: [pool, vip, address] }
+
