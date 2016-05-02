@@ -21,16 +21,16 @@
 
 
 
-- name: debian apt repository
-  apt_repository: repo='deb http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
-  when: database_type == 'mysql' and ansible_distribution == 'Debian'
+#- name: debian apt repository
+#  apt_repository: repo='deb http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
+#  when: database_type == 'mysql' and ansible_distribution == 'Debian'
 
-- name: debian apt src repository
-  apt_repository: repo='deb-src http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
-  when: database_type == 'mysql' and ansible_distribution == 'Debian'
+#- name: debian apt src repository
+#  apt_repository: repo='deb-src http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
+#  when: database_type == 'mysql' and ansible_distribution == 'Debian'
 
-- name: apt-get update
-  apt: update_cache=yes
+#- name: apt-get update
+#  apt: update_cache=yes
 
 - name: Install MySQL packages
   apt: pkg=mysql-server state=installed
