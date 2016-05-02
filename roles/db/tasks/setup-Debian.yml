@@ -21,25 +21,24 @@
 
 
 
-- name: add repo debian
-  shell: |
-            cd /tmp
-            wget -O mysql-apt-config.deb https://dev.mysql.com/get/mysql-apt-config_0.3.7-1debian8_all.deb
-            sudo dpkg -i mysql-apt-config.deb
-  when: ansible_distribution == 'Debian'
+- name: debian apt repository
+  apt_repository: repo='deb http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
+  when: database_type == 'mysql' and ansible_distribution == 'Debian'
+
+- name: debian apt src repository
+  apt_repository: repo='deb-src http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
+  when: database_type == 'mysql' and ansible_distribution == 'Debian'
 
 - name: apt-get update
   apt: update_cache=yes
 
 - name: Install MySQL packages
+  apt: pkg=mysql-server state=installed
+  when: database_type == 'mysql' and ansible_distribution == 'Debian'
+
+- name: Install MySQL packages
   apt: pkg=mysql-server-5.6 state=installed
-
-
-
-
-
-
-  when: database_type == 'mysql'
+  when: database_type == 'mysql' and ansible_distribution == 'Ubuntu'
 
 
 - name: Modify configuration file to listen on all interfaces
