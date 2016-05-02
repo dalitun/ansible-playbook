@@ -1,5 +1,5 @@
 - name: repl user
-  mysql_user: name=repl login_user=root login_password="" host="%" password={{ db_admin_password }} priv="*.*:SELECT,PROCESS,FILE,SUPER,REPLICATION CLIENT,REPLICATION SLAVE,RELOAD" state=present
+  mysql_user: name=repl host="%" password={{ db_admin_password }} priv="*.*:SELECT,PROCESS,FILE,SUPER,REPLICATION CLIENT,REPLICATION SLAVE,RELOAD" state=present
 
 
 - name: Get master binlog file name and binlog position
