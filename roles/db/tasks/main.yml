@@ -10,7 +10,7 @@
   include: replication.yml
 
 - name: creating database MySQL database
-  shell: mysql -u root -e "CREATE DATABASE {{ db_name }};"
+  shell: mysql -u root -e "CREATE DATABASE IF NOT EXISTS {{ db_name }};"
 
 - name: Create readwrite user
   shell : |
