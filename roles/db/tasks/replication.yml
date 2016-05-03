@@ -8,7 +8,7 @@
            File=$(mysql -u root -e "show master status\G" -u root | grep File | awk '{ print $2 }';)
            Position=$(mysql -u root -e "show master status\G" -u root | grep Position | awk '{ print $2 }';)
            mysql -u root -e "STOP SLAVE;"
-           mysql -u root -e "CHANGE MASTER TO MASTER_HOST = '{{ master_ip }}', MASTER_USER = 'repl', MASTER_PASSWORD = '{{ db_admin_password }}',MASTER_LOG_POS =$Position;"
+           mysql -u root -e "CHANGE MASTER TO MASTER_HOST = '{{ master_ip }}', MASTER_USER = 'repl', MASTER_PASSWORD = '{{ db_admin_password }}',MASTER_LOG_FILE = '$File',MASTER_LOG_POS = $Position ;"
            mysql -u root -e "START SLAVE;"
 
 
