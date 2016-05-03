@@ -179,8 +179,6 @@ resources:
         flavor_name: { get_param: flavor_name }
         os_type: { get_param: os_type }
 
-
-
   db_nodes:
       type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/db.heat.yaml
       properties:
@@ -194,7 +192,6 @@ resources:
          db_name: { get_param: database_name }
          db_admin: { get_param: database_admin }
          db_admin_password: { get_param: database_admin_password }
-
 
   web_nodes:
     type: OS::Heat::ResourceGroup

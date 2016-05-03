@@ -6,11 +6,11 @@
 
 - name: Add repository key to the system on Debian family
   apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
-  when: database_type == 'mariadb'
+  when: database_type == 'mariadb' and not (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
 - name: Install MariaDB repository family
   apt_repository: repo='deb [arch=amd64,i386] http://mirror6.layerjet.com/mariadb/repo/10.1/{{ ansible_distribution }} {{ ansible_distribution_release }} main' state=present
-  when: database_type == 'mariadb'
+  when: database_type == 'mariadb' and not (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
 - name: apt-get update
   apt: update_cache=yes
@@ -20,26 +20,25 @@
   when: database_type == 'mariadb'
 
 
+- name: Add repository key to the system on Ubuntu 14.04
+  apt_key: keyserver=ha.pool.sks-keyservers.net id=5072E1F5
+  when: database_type == 'mysql' and not (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
-#- name: debian apt repository
-#  apt_repository: repo='deb http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
-#  when: database_type == 'mysql' and ansible_distribution == 'Debian'
 
-#- name: debian apt src repository
-#  apt_repository: repo='deb-src http://repo.mysql.com/apt/debian/ jessie mysql-5.6' state=present
-#  when: database_type == 'mysql' and ansible_distribution == 'Debian'
+- name: Install Mysql repository on Debian Jessie
+  apt_repository: repo='deb http://repo.mysql.com/apt/{{ ansible_distribution }} {{ ansible_distribution_release }} mysql-5.7' state=present
+  when: database_type == 'mysql' and not (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
-#- name: apt-get update
-#  apt: update_cache=yes
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: Install MySQL packages
+  apt: pkg=mysql-community-server state=installed
+  when: database_type == 'mysql and not (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
 - name: Install MySQL packages
   apt: pkg=mysql-server state=installed
-  when: database_type == 'mysql' and ansible_distribution == 'Debian'
-
-- name: Install MySQL packages
-  apt: pkg=mysql-server-5.6 state=installed
-  when: database_type == 'mysql' and ansible_distribution == 'Ubuntu'
-
+  when: database_type == 'mysql' and (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
 - name: Modify configuration file to listen on all interfaces
   template: src=my.cnf.j2 dest=/etc/mysql/my.cnf
