@@ -23,6 +23,10 @@
      force: yes
   when: ansible_eth0.ipv4.address=="{{ gluster_master }}"
 
+- name: wait gluster 2 
+  wait_for: host=0.0.0.0 port=24007 state=drained exclude_hosts={{ gluster_master }}
+
+
 - name: Start Gluster volume
   gluster_volume: name={{ gluster_brick_name }} state=started
   when: ansible_eth0.ipv4.address=="{{ gluster_master }}"
