@@ -30,6 +30,9 @@
           - ROOT
           - docs
           - examples
+- name: add permission for /opt/tomcat
+  shell: chown -R tomcat:tomcat /opt/tomcat
+
 
 - name: Symlink install directory
   file: src=/opt/tomcat path=/usr/share/tomcat owner=tomcat group=tomcat state=link
