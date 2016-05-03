@@ -34,7 +34,7 @@
 
 - name: Install MySQL packages
   apt: pkg=mysql-community-server state=installed
-  when: database_type == 'mysql and ( not ansible_distribution_release == 'xenial')
+  when: database_type == 'mysql' and ( not ansible_distribution_release == 'xenial')
 
 - name: Install MySQL packages
   apt: pkg=mysql-server state=installed
