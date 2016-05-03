@@ -18,15 +18,15 @@
      name: "{{ gluster_brick_name }}"
      brick: "{{ gluster_brick_dir }}"
      replicas: 2
-     cluster: "{{ node['1'] }},{{ node['2'] }}"
+     cluster: "{{ node.1 }},{{ node.2 }}"
      host: "{{ ansible_eth0.ipv4.address  }}"
      force: yes
-  when: ansible_eth0.ipv4.address=="{{ node['1'] }}"
+  when: ansible_eth0.ipv4.address=="{{ node.1 }}"
 
 - name: wait node2 connect
-  wait_for: host={{ node['2'] }} port=24007 state=drained
+  wait_for: host={{ node.2 }} port=24007 state=drained
 
 
 - name: Start Gluster volume
   gluster_volume: name={{ gluster_brick_name }} state=started
-  when: ansible_eth0.ipv4.address=="{{ node['1'] }}"
+  when: ansible_eth0.ipv4.address=="{{ node.1 }}"
