@@ -17,31 +17,23 @@
 - name: Download Tomcat
   get_url: url=http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz dest=/opt
 
-
-- name: test if /opt/tomcat existe
-  stat: path=/opt/tomcat
-  register: st
-
 - name: create /opt/tomcat folder
-  file: path=/opt/tomcat state=directory mode=0755
-  when: not st.stat.exists
+  file: path=/opt/tomcat owner=tomcat group=tomcat state=directory mode=0755
+
 
 - name: Extract archive
   shell: /bin/tar xvfz /opt/apache-tomcat-8.0.33.tar.gz -C /opt/tomcat --strip 1
 
 - name: purge tomcat webapps
-  file: path=/opt/tomcat/webapps/{{ item }} state=absent
+  file: path=/opt/tomcat/webapps/{{ item }} recurse=yes state=absent
   with_items:
           - ROOT
           - docs
           - examples
 
 - name: Symlink install directory
-  file: src=/opt/tomcat path=/usr/share/tomcat state=link
+  file: src=/opt/tomcat path=/usr/share/tomcat owner=tomcat group=tomcat state=link
 
-
-- name: Change ownership of Tomcat installation
-  file: path=/usr/share/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
 
 - name: Configure Tomcat users
   copy: src=tomcat-users.xml dest=/usr/share/tomcat/conf/

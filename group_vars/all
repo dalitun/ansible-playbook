@@ -25,6 +25,6 @@ gluster_ip: 10.0.0.120
 #Application_source: https://github.com/dalitun/cw-bundle-lamp.git
 #Application_source: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
 Application_source: https://github.com/dalitun/node-hello-world.git
-#app_directory: /opt/tomcat
+#app_directory: /opt/tomcat/webapps
 #app_directory: /var/www/html
 app_directory: /nodejs
