@@ -25,7 +25,7 @@
   shell: /bin/tar xvfz /opt/apache-tomcat-8.0.33.tar.gz -C /opt/tomcat --strip 1
 
 - name: purge tomcat webapps
-  file: path=/opt/tomcat/webapps/{{ item }} recurse=yes state=absent
+  file: path=/opt/tomcat/webapps/{{ item }} state=absent
   with_items:
           - ROOT
           - docs
