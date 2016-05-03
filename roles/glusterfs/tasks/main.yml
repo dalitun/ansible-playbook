@@ -23,8 +23,14 @@
      force: yes
   when: ansible_eth0.ipv4.address=="{{ node.1 }}"
 
-- name: wait node2 connect
-  wait_for: host={{ node.2 }} port=24007 state=drained
+- name: Wait until glsuterds is available
+  local_action:
+    module: wait_for
+    host: "{{ node.2 }}"
+    port: 24007
+    delay: 60
+    timeout: 320
+    state: started
 
 
 - name: Start Gluster volume
