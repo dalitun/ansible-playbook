@@ -32,7 +32,7 @@
           - examples
 
 - name: Symlink install directory
-  file: src=/opt/tomcat path=/usr/share/tomcat owner=tomcat group=tomcat state=link
+  file: src=/opt/tomcat path=/usr/share/tomcat owner=tomcat group=tomcat recurse=yes state=link
 
 
 - name: Configure Tomcat users
