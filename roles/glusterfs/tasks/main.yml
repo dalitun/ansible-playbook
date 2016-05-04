@@ -12,15 +12,6 @@
     - "{{ gluster_brick_dir }}"
     - "{{ gluster_mount_dir }}"
 
-- name: Wait until glsuterds is available
-  local_action:
-    module: wait_for
-    host: "{{ node.2 }}"
-    port: 24007
-    delay: 70
-    timeout: 320
-    state: started
-
 
 - name: Configure Gluster volume.
   gluster_volume:
