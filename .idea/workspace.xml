@@ -57,21 +57,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pre-setup.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+      <file leaf-file-name="db.heat.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46022728">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state vertical-scroll-proportion="-5.962963">
+              <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup-Redhat.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pre-setup.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup-Redhat.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.4074075">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.051136363">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -106,9 +116,9 @@
         <option value="$PROJECT_DIR$/group_vars/all" />
         <option value="$PROJECT_DIR$/roles/common/tasks/main.yml" />
         <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
-        <option value="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
         <option value="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" />
         <option value="$PROJECT_DIR$/pre-setup.yml" />
+        <option value="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
       </list>
     </option>
   </component>
@@ -790,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22017045">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/glusterfs.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17897727">
@@ -854,6 +856,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.407408">
@@ -862,18 +872,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
+    <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4074075">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state vertical-scroll-proportion="-5.962963">
+          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46022728">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.051136363">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
           <folding />
         </state>
       </provider>
