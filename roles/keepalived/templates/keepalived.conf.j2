@@ -1,31 +1,52 @@
-! Configuration File for keepalived
 global_defs {
    router_id zsz
-      }
-
-vrrp_script check_mysql {
-   script "/etc/keepalived/check_mysql.sh {{ master_ip }}"
-   interval 2
-   weight 2
 }
+
+vrrp_sync_group VG1 {
+    group {
+         VI_1
+    }
+ }
 
 vrrp_instance VI_1 {
-      state BACKUP
-      interface eth0
-      virtual_router_id 51
-      priority 100
-      advert_int 1
-      nopreempt  # only needed on higher priority node
-      authentication {
-      auth_type PASS
-      auth_pass 1111
-      }
+   state MASTER
+   interface eth0
+   virtual_router_id 51
+   priority 80
+   advert_int 1
+   nopreempt
+   authentication {
+       auth_type PASS
+       auth_pass 1111
+   }
 
-      track_script {
-        check_mysql
-      }
-      virtual_ipaddress {
-        10.0.1.10/24 dev eth0 label eth0:1
-      }
+virtual_ipaddress {
+   10.0.1.10/24 dev eth0 label eth0:1
+  }
 
 }
+
+virtual_server 10.0.1.10 3306 {
+    delay_loop 2
+    lb_algo wrr
+    lb_kind DR
+    persistence_timeout 60
+    protocol TCP
+    real_server {{ ansible_eth0.ipv4.address }} 3306 {
+    weight 3
+      notify_down /root/check_mysql.sh
+
+    TCP_CHECK {
+    connect_timeout 10
+      nb_get_retry 3
+      delay_before_retry 3
+      connect_port 3306
+              }
+
+                                              }
+
+
+       }
+
+
+
