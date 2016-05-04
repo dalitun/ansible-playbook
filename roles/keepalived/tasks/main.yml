@@ -17,7 +17,7 @@
 
 
 - name: copy check_mysql.sh
-  template: src=check_mysql.sh dest=/etc/keepalived/check_mysql.sh mode=0755
+  copy: src=check_mysql.sh dest=/etc/keepalived/check_mysql.sh mode=0755
 
 
 - name: add template keepalived
