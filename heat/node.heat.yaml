@@ -71,7 +71,6 @@ resources:
         str_replace:
           template: |
              #!/bin/bash
-             sleep 60
              mkdir /etc/ansible
              echo "[local]" >> /etc/ansible/hosts
              echo "127.0.0.1 ansible_connection=local" >> /etc/ansible/hosts
