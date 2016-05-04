@@ -9,8 +9,6 @@
   when: database_type == 'mariadb' and (not ansible_distribution_release == 'xenial')
 
 
-deb http://mariadb.biz.net.id//repo/10.1/debian sid main
-
 
 
 - name: Install MariaDB repository on Debian family
