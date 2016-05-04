@@ -7,6 +7,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" afterPath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/node.heat.yaml" afterPath="$PROJECT_DIR$/heat/node.heat.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pre-setup.yml" afterPath="$PROJECT_DIR$/pre-setup.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml" afterPath="$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" afterPath="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/db/tasks/main.yml" afterPath="$PROJECT_DIR$/roles/db/tasks/main.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/db/tasks/replication.yml" afterPath="$PROJECT_DIR$/roles/db/tasks/replication.yml" />
@@ -36,31 +37,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bundle-3tiers.heat.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/heat/bundle-3tiers.heat.yml">
+      <file leaf-file-name="pre-setup.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pre-setup.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="110.22222">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state vertical-scroll-proportion="-14.666667">
+              <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.heat.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
+      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.407408">
-              <caret line="123" column="30" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="123" />
+            <state vertical-scroll-proportion="0.2556818">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/roles/tomcat/tasks/main.yml">
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92045456">
-              <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+            <state vertical-scroll-proportion="-20.74074">
+              <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/group_vars/all">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="2" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -82,7 +93,6 @@
         <option value="$PROJECT_DIR$/php.yml" />
         <option value="$PROJECT_DIR$/host_inventory" />
         <option value="$PROJECT_DIR$/db.yml" />
-        <option value="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
         <option value="$PROJECT_DIR$/roles/glusterfs/tasks/setup-Redhat.yml" />
         <option value="$PROJECT_DIR$/roles/glusterfs/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/roles/db/tasks/replication.yml" />
@@ -91,11 +101,13 @@
         <option value="$PROJECT_DIR$/roles/glusterfs/vars/main.yml" />
         <option value="$PROJECT_DIR$/group_vars/all" />
         <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
-        <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
-        <option value="$PROJECT_DIR$/pre-setup.yml" />
-        <option value="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" />
         <option value="$PROJECT_DIR$/roles/db/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/roles/tomcat/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
+        <option value="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
+        <option value="$PROJECT_DIR$/pre-setup.yml" />
+        <option value="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml" />
       </list>
     </option>
   </component>
@@ -339,6 +351,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="roles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ansible-playbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="roles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -617,22 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5113636">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/common/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -645,14 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10227273">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28125">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -677,22 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/group_vars/all">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66484267">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -777,14 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36079547">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/db/tasks/setup-Debian.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9488636">
@@ -797,14 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35795453">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38352272">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -825,14 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/db/tasks/post-setup.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67897725">
-          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/db/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3068182">
@@ -841,17 +829,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/heat/bundle-3tiers.heat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="110.22222">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.6207386">
+          <caret line="249" column="52" selection-start-line="249" selection-start-column="52" selection-end-line="249" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heat/node.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.407408">
+        <state vertical-scroll-proportion="0.47585228">
           <caret line="123" column="30" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="123" />
           <folding />
         </state>
@@ -859,8 +855,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/roles/tomcat/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92045456">
+        <state vertical-scroll-proportion="1.0994319">
           <caret line="43" column="44" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28125">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48863637">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/db/tasks/post-setup.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59090906">
+          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/group_vars/all">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.74074">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.666667">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2556818">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
           <folding />
         </state>
       </provider>

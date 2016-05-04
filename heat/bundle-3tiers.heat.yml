@@ -246,6 +246,9 @@ resources:
       pool_id: { get_resource: pool }
       protocol_port: 80
 
+  service1_wait_handle:
+    type: "AWS::CloudFormation::WaitConditionHandle"
+
 #---------#
 # Outputs #
 #---------#

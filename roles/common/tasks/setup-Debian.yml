@@ -8,4 +8,5 @@
   with_items:
     - glusterfs-client
     - git
+    - nc
 
