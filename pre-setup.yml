@@ -22,6 +22,6 @@
    - name : wait apache is up
       action: shell nc -vz {{ gluster_ip }} 24007
       register: result
-      until: result.stdout.find("succeeded") != -1
+      until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
       retries: 5
       delay: 10
