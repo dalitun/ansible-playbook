@@ -10,10 +10,10 @@
   file: owner=root group=root mode=0644
         path=/etc/yum.repos.d/glusterfs-epel.repo
 
-- name: get epel-repo rpm RHEL5
+- name: get rpm nc
   get_url: dest=/tmp/nc-1.84-24.el6.x86_64.rpm  url=ftp://195.220.108.108/linux/centos/6.7/os/x86_64/Packages/nc-1.84-24.el6.x86_64.rpm
 
-- name: install epel-repo rpm
+- name: install rpm nc
   yum: pkg=/tmp/nc-1.84-24.el6.x86_64.rpm state=installed
 
 

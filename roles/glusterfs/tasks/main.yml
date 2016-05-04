@@ -16,8 +16,8 @@
   action: shell nc -vz {{ node.2 }} 24007
   register: result
   until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
-  retries: 5
-  delay: 10
+  retries: 10
+  delay: 5
   when: ansible_eth0.ipv4.address=="{{ node.1 }}"
 
 
@@ -32,8 +32,7 @@
      force: yes
   when: ansible_eth0.ipv4.address=="{{ node.1 }}"
 
-
-
 - name: Start Gluster volume
   gluster_volume: name={{ gluster_brick_name }} state=started
   when: ansible_eth0.ipv4.address=="{{ node.1 }}"
+
