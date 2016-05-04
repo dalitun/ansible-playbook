@@ -7,7 +7,7 @@ parameters:
     label: SSH Keypair
     type: string
  os_type:
-    default: Centos 7.2
+    default: Ubuntu 14.04
     description: os type
     label: os type
     type: string
@@ -18,7 +18,7 @@ parameters:
           - Centos 7.2
           - Ubuntu 16.04
  Application_type:
-    default: tomcat
+    default: php5
     description: Application type
     label: Application type
     type: string
@@ -28,7 +28,7 @@ parameters:
           - tomcat
           - nodejs
  Application_source:
-    default: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+    default: https://github.com/dalitun/cw-bundle-lamp.git
     description: url for your application php , war or nodejs
     label: url for your application php , war or nodejs
     type: string
@@ -57,7 +57,7 @@ parameters:
           - n1.cw.highmem-4
 
  database_type:
-    default: mysql
+    default: mariadb
     description: database type
     type: string
     constraints:

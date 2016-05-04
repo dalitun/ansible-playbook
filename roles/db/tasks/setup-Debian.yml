@@ -8,8 +8,8 @@
   apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
   when: database_type == 'mariadb' and (not ansible_distribution_release == 'xenial')
 
-- name: Install MariaDB repository family
-  apt_repository: repo='deb [arch=amd64,i386] http://mirror6.layerjet.com/mariadb/repo/10.1/{{ ansible_distribution }} {{ ansible_distribution_release }} main' state=present
+- name: Install MariaDB repository on Debian family
+  apt_repository: repo='deb http://mirror6.layerjet.com/mariadb/repo/10.1/{{ ansible_distribution }} {{ ansible_distribution_release }} main' state=present
   when: database_type == 'mariadb' and (not ansible_distribution_release == 'xenial')
 
 - name: apt-get update
