@@ -11,6 +11,14 @@
    - name: create Application
      file: path={{ app_directory }} state=directory recurse=yes mode=0755
 
+
+   - name : wait gluster is up
+     action: shell nc -vz {{ gluster_ip }} 24007
+     register: result
+     until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
+     retries: 5
+     delay: 10
+
    - name: mount
      mount:
       name: "{{ app_directory }}"
@@ -19,9 +27,3 @@
       opts: "defaults,_netdev"
       state: mounted
 
-   - name : wait apache is up
-     action: shell nc -vz {{ gluster_ip }} 24007
-     register: result
-     until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
-     retries: 5
-     delay: 10

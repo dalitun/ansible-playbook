@@ -24,7 +24,7 @@
      force: yes
   when: ansible_eth0.ipv4.address=="{{ node.1 }}"
 
-- name : wait apache is up
+- name : wait gluster 2 is up
   action: shell nc -vz {{ node.2 }} 24007
   register: result
   until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
