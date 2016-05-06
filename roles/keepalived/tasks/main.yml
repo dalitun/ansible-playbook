@@ -12,10 +12,6 @@
   sysctl: name=net.ipv4.ip_nonlocal_bind value=1 state=present reload=yes
 
 
-#- name: copy check_mysql.sh
-#  template: src=check_mysql.sh.j2 dest=/etc/keepalived/check_mysql.sh mode=0755
-
-
 - name: copy check_mysql.sh
   copy: src=check_mysql.sh dest=/etc/keepalived/check_mysql.sh mode=0755
 

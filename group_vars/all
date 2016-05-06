@@ -12,6 +12,10 @@ db_admin: admin
 db_admin_password: changeme
 master_ip: 10.0.0.103
 
+## state MASTER or BACKUP
+state: MASTER
+priority: 100
+vip: 10.0.1.10
 
 gluster_mount_dir: /mnt/gluster
 gluster_brick_dir: /srv/gluster/brick

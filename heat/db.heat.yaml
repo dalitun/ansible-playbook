@@ -119,6 +119,9 @@ resources:
                    vg_name: vg0
                    lv_name: global
                    lv_size : 8g
+                   state: MASTER
+                   priority: 100
+                   vip: 10.0.1.10
                   EOF
                    if [ "$os" == "Debian Jessie" ] ;
                   then
@@ -166,6 +169,9 @@ resources:
                    vg_name: vg0
                    lv_name: global
                    lv_size : 8g
+                   state: BACKUP
+                   priority: 80
+                   vip: 10.0.1.10
                   EOF
 
                    if [ "$os" == "Debian Jessie" ] ;
