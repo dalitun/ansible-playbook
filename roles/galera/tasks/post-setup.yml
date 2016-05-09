@@ -20,6 +20,8 @@
 
 - name: create lvm global
   lvol: vg={{ vg_name }} lv={{ lv_name }} size={{ lv_size }}
+
+
 - name: create filesystem on global
   filesystem: fstype=ext4 dev=/dev/{{ vg_name }}/{{ lv_name }}
 
@@ -44,14 +46,13 @@
   when: ansible_distribution == 'Ubuntu'
 
 
-
 - name: change conf my.cnf Debian
-  replace: dest=/etc/mysql/my.cnf regexp="datadir     = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
+  replace: dest=/etc/mysql/my.cnf regexp="datadir         = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
   notify:  restart mysql
   when: ansible_os_family == "Debian"
 
 - name: change conf my.cnf Redhat
-  replace: dest=/etc/my.cnf regexp="datadir     = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
+  replace: dest=/etc/my.cnf regexp="datadir         = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
   notify: restart mysqld
   when: ansible_os_family == "RedHat"
 
