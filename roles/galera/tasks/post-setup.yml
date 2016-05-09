@@ -37,21 +37,23 @@
 - name: mv /var/lib/mysql to /DbStorage
   shell: cp -rp /var/lib/mysql /DbStorage
 
-- name: change conf my.cnf Debian
-  lineinfile: dest=/etc/mysql/my.cnf regexp="datadir     = /var/lib/mysql" line="datadir     = /DbStorage/mysql"
-  notify: restart mysql
-  when: ansible_os_family == "Debian"
-
-- name: change conf my.cnf Redhat
-  lineinfile: dest=/etc/my.cnf regexp="datadir     = /var/lib/mysql" line="datadir     = /DbStorage/mysql"
-  notify: restart mysqld
-  when: ansible_os_family == "RedHat"
-
 
 - name:  change conf apparmor
   copy: src=usr.sbin.mysqld  dest=/etc/apparmor.d/usr.sbin.mysqld
   notify: restarted apparmor
   when: ansible_distribution == 'Ubuntu'
+
+
+
+- name: change conf my.cnf Debian
+  replace: dest=/etc/mysql/my.cnf regexp="datadir     = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
+  notify:  restart mysql
+  when: ansible_os_family == "Debian"
+
+- name: change conf my.cnf Redhat
+  replace: dest=/etc/my.cnf regexp="datadir     = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
+  notify: restart mysqld
+  when: ansible_os_family == "RedHat"
 
 
 

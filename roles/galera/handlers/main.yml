@@ -7,7 +7,7 @@
 
 - name: restarted apparmor
   service: name=apparmor state=restarted enabled=yes
-  notify: restart mysql
+
 
 
 
