@@ -6,7 +6,7 @@
 
 - name: Add repository key to the system on Debian family
   apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
-  when: database_type == 'mariadb' and (not ansible_distribution_release == 'xenial')
+  when: not ansible_distribution_release == 'xenial'
 
 - name: Install MariaDB repository on Debian family
   apt_repository: repo='deb [arch=amd64,i386] http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.1/debian sid main' state=present
@@ -20,7 +20,7 @@
   apt: update_cache=yes
 
 - name: Install MariaDB Server
-  apt: name=mariadb-server state=latest update_cache=yes
+  apt: name=mariadb-server state=installed
 
 - name: stop mysql
   service: name=mysql state=stopped enabled=yes
