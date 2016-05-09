@@ -7,7 +7,7 @@
   tasks:
 
     - name: deploy node
-      shell: git clone {{ Application_source }} /nodejs/tmp && mv /nodejs/tmp/* /nodejs/ && rm -rf /nodejs/tmp
+      shell: git clone {{ Application_source }} /nodejs
       when: gluster_ip  == '10.0.0.120'
     - name: launch app
       shell: node /nodejs/app.js &
