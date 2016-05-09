@@ -37,11 +37,11 @@
   when: ansible_distribution == 'Ubuntu'
 
 - name: change conf my.cnf Debian
-  copy: src=my.cnf.debian dest=/etc/mysql/my.cnf
+  lineinfile: dest=/etc/mysql/my.cnf regexp='^datadir' line='datadir     = /DbStorage/mysql'
   when: ansible_os_family == "Debian"
 
 - name: change conf my.cnf Redhat
-  copy: src=my.cnf.redhat dest=/etc/my.cnf
+  lineinfile: dest=/etc/my.cnf regexp='^datadir' line='datadir     = /DbStorage/mysql'
   when: ansible_os_family == "RedHat"
 
 
