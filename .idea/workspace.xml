@@ -20,7 +20,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/templates/check_mysql.sh.j2" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/templates/keepalived.conf.j2" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/vars/main.yml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" afterPath="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodejs.yml" afterPath="$PROJECT_DIR$/nodejs.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,21 +51,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post-setup.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="post-setup.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/roles/galera/tasks/post-setup.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7698864">
+            <state vertical-scroll-proportion="-20.074074">
               <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nodejs.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db.heat.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.25926">
+              <caret line="181" column="50" selection-start-line="181" selection-start-column="18" selection-end-line="181" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nodejs.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nodejs.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.3068182">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -109,10 +119,10 @@
         <option value="$PROJECT_DIR$/roles/galera/vars/main.yml" />
         <option value="$PROJECT_DIR$/heat/db.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
-        <option value="$PROJECT_DIR$/nodejs.yml" />
         <option value="$PROJECT_DIR$/roles/galera/handlers/main.yml" />
         <option value="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" />
+        <option value="$PROJECT_DIR$/nodejs.yml" />
       </list>
     </option>
   </component>
@@ -588,7 +598,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.254375" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.255625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -790,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82102275">
-          <caret line="181" column="112" selection-start-line="181" selection-start-column="18" selection-end-line="181" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/common/handlers/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -870,18 +872,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nodejs.yml">
+    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/post-setup.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        <state vertical-scroll-proportion="-20.074074">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/post-setup.yml">
+    <entry file="file://$PROJECT_DIR$/heat/db.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7698864">
-          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+        <state vertical-scroll-proportion="-22.25926">
+          <caret line="181" column="50" selection-start-line="181" selection-start-column="18" selection-end-line="181" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3068182">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           <folding />
         </state>
       </provider>
