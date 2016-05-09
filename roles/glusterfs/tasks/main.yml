@@ -18,7 +18,7 @@
   until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
   retries: 10
   delay: 5
-  when: ansible_eth0.ipv4.address=="{{ node.1 }}"
+  when: ansible_default_ipv4.address=="{{ node.1 }}"
 
 
 - name: Configure Gluster volume.
@@ -28,11 +28,11 @@
      brick: "{{ gluster_brick_dir }}"
      replicas: 2
      cluster: "{{ node.1 }},{{ node.2 }}"
-     host: "{{ ansible_eth0.ipv4.address  }}"
+     host: "{{ ansible_default_ipv4.address }}"
      force: yes
-  when: ansible_eth0.ipv4.address=="{{ node.1 }}"
+  when:  ansible_default_ipv4.address=="{{ node.1 }}"
 
 - name: Start Gluster volume
   gluster_volume: name={{ gluster_brick_name }} state=started
-  when: ansible_eth0.ipv4.address=="{{ node.1 }}"
+  when: ansible_default_ipv4.address=="{{ node.1 }}"
 

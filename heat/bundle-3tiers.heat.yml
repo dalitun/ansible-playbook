@@ -18,7 +18,7 @@ parameters:
           - Centos 7.2
           - Ubuntu 16.04
  Application_type:
-    default: php5
+    default: nodejs
     description: Application type
     label: Application type
     type: string
@@ -28,7 +28,7 @@ parameters:
           - tomcat
           - nodejs
  Application_source:
-    default: https://github.com/dalitun/cw-bundle-lamp.git
+    default: https://github.com/dalitun/node-hello-world.git
     description: url for your application php , war or nodejs
     label: url for your application php , war or nodejs
     type: string
@@ -145,7 +145,8 @@ resources:
       rules:
         - { direction: ingress, protocol: TCP, port_range_min: 22, port_range_max: 22 }
         - { direction: ingress, remote_ip_prefix: { get_attr: [nodes_subnet, cidr] },protocol: TCP, port_range_min: 3306, port_range_max: 3306 }
-        - { direction: ingress, remote_ip_prefix: { get_attr: [db_subnet, cidr] },protocol: TCP, port_range_min: 3306, port_range_max: 3306 }
+        - { direction: ingress,remote_ip_prefix: { get_attr: [db_subnet, cidr] }, protocol: TCP }
+        - { direction: ingress,remote_ip_prefix: { get_attr: [db_subnet, cidr] }, protocol: UDP }
         - { direction: ingress, protocol: ICMP }
         - { direction: egress, protocol: ICMP }
         - { direction: egress, protocol: TCP }

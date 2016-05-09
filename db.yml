@@ -5,6 +5,5 @@
   sudo: true
   roles:
     - common
-    - db
-    - keepalived
+    - galera
 

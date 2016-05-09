@@ -1,0 +1,31 @@
+- name: Install MySQL package
+  apt: pkg=software-properties-common state=installed
+
+- name: Install python module
+  apt: name=python-mysqldb state=installed
+
+- name: Add repository key to the system on Debian family
+  apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
+  when: database_type == 'mariadb' and (not ansible_distribution_release == 'xenial')
+
+- name: Install MariaDB repository on Debian family
+  apt_repository: repo='deb [arch=amd64,i386] http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.1/debian sid main' state=present
+  when: ansible_distribution_release == 'jessie'
+
+- name: Install MariaDB repository on ubuntu trusty
+  apt_repository: repo='deb [arch=amd64,i386] http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.1/ubuntu trusty main' state=present
+  when: ansible_distribution_release == 'trusty'
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: Install MariaDB Server
+  apt: name=mariadb-server state=latest update_cache=yes
+
+- name: stop mysql
+  service: name=mysql state=stopped enabled=yes
+
+- name: Modify configuration file to listen on all interfaces
+  template: src=galera.cnf.j2 dest=/etc/mysql/conf.d/galera.cnf
+
+
