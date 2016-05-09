@@ -1,8 +1,11 @@
-- name: Install MySQL package
-  apt: pkg=software-properties-common state=installed
-
-- name: Install python module
-  apt: name=python-mysqldb state=installed
+- name: install common packages
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - software-properties-common
+    - python-mysqldb
+    - rsync
 
 - name: Add repository key to the system on Debian family
   apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db
