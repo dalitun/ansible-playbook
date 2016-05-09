@@ -28,32 +28,20 @@
 - name: mount global
   mount: name=/DbStorage src=/dev/{{ vg_name }}/{{ lv_name }} fstype=ext4 opts=noatime passno=2 state=mounted
 
-- name: stop mysql
-  service: name=mysql state=stopped
-  when: ansible_os_family == 'Debian'
-
-- name: stop mysqld
-  service: name=mysqld state=stopped
-  when: ansible_os_family == 'RedHat'
-
 - name: mv /var/lib/mysql to /DbStorage
   shell: cp -rp /var/lib/mysql /DbStorage
-
 
 - name:  change conf apparmor
   copy: src=usr.sbin.mysqld  dest=/etc/apparmor.d/usr.sbin.mysqld
   notify: restarted apparmor
   when: ansible_distribution == 'Ubuntu'
 
-
 - name: change conf my.cnf Debian
-  replace: dest=/etc/mysql/my.cnf regexp="datadir         = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
-  notify:  restart mysql
+  copy: src=my.cnf.debian dest=/etc/mysql/my.cnf
   when: ansible_os_family == "Debian"
 
 - name: change conf my.cnf Redhat
-  replace: dest=/etc/my.cnf regexp="datadir         = /var/lib/mysql" replace="datadir     = /DbStorage/mysql"
-  notify: restart mysqld
+  copy: src=my.cnf.redhat dest=/etc/my.cnf
   when: ansible_os_family == "RedHat"
 
 

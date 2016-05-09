@@ -6,6 +6,10 @@
   include: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
+- name: post setup
+  include: post-setup.yml
+
+
 - name: start master
   shell: service mysql start --wsrep-new-cluster
   when: master == true and ansible_os_family == 'Debian'
@@ -24,14 +28,12 @@
   service: name=mysqld state=started enabled=yes
   when: master == false  and ansible_os_family == 'RedHat'
 
-
 - name: creating database MySQL database
   shell: mysql -u root -e "CREATE DATABASE IF NOT EXISTS {{ db_name }};"
+  when: master == true
 
 - name: Create readwrite user
   shell : |
            mysql -u root -e "CREATE USER '{{ db_admin }}'@'%' IDENTIFIED BY '{{ db_admin_password }}';"
            mysql -u root -e "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON *.* TO '{{ db_admin }}'@'%';"
-
-- name: post setup
-  include: post-setup.yml
+  when: master == true
