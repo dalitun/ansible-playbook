@@ -20,8 +20,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/templates/check_mysql.sh.j2" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/templates/keepalived.conf.j2" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/vars/main.yml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" afterPath="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" afterPath="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodejs.yml" afterPath="$PROJECT_DIR$/nodejs.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5625">
+            <state vertical-scroll-proportion="-14.666667">
               <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nodejs.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nodejs.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20454545">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,7 +141,6 @@
       <list>
         <option value="$PROJECT_DIR$/glusterfs.yml" />
         <option value="$PROJECT_DIR$/roles/db/tasks/setup-Redhat.yml" />
-        <option value="$PROJECT_DIR$/nodejs.yml" />
         <option value="$PROJECT_DIR$/tomcat.yml" />
         <option value="$PROJECT_DIR$/php.yml" />
         <option value="$PROJECT_DIR$/roles/glusterfs/tasks/setup-Redhat.yml" />
@@ -162,6 +170,7 @@
         <option value="$PROJECT_DIR$/heat/db.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/bundle-3tiers.heat.yml" />
         <option value="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" />
+        <option value="$PROJECT_DIR$/nodejs.yml" />
       </list>
     </option>
   </component>
@@ -620,14 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nodejs.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/glusterfs/vars/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10227273">
@@ -839,8 +840,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5625">
+        <state vertical-scroll-proportion="-14.666667">
           <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20454545">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
