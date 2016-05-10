@@ -98,7 +98,7 @@ resources:
                  vg_name: vg0
                  lv_name: global
                  lv_size : 8g
-              EOF
+             EOF
 
                if [ $index -eq 0 ]
                then
