@@ -13,7 +13,7 @@
   when: not ansible_distribution_release == 'xenial'
 
 - name: Install MariaDB repository on Debian family
-  apt_repository: repo='deb http://mariadb.biz.net.id/repo/10.1/debian jessie main' state=present
+  apt_repository: repo='deb [arch=amd64,i386] http://ftp.igh.cnrs.fr/pub/mariadb/repo/10.1/debian jessie main' state=present
   when: ansible_distribution_release == 'jessie'
 
 - name: Install MariaDB repository on ubuntu trusty
