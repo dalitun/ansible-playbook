@@ -9,7 +9,6 @@
 - name: post setup
   include: post-setup.yml
 
-
 - name: start master
   shell: service mysql start --wsrep-new-cluster
   when: master == true and ansible_os_family == 'Debian'
@@ -18,7 +17,6 @@
 - name: start master
   shell: service mysqld start --wsrep-new-cluster
   when: master == true and ansible_os_family == 'RedHat'
-
 
 - name: start mysql
   service: name=mysql state=started enabled=yes
