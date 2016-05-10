@@ -109,12 +109,12 @@ resources:
                START=1
                END=$clusters_size
                echo "10.0.1.10 node0" >> /etc/hosts
-               TEMP="    clusters: 10.0.1.10"
+               TEMP="clusters: 10.0.1.10"
                for ((i=1;i<$END;i++)); do
                echo "10.0.1.1$i node$i" >> /etc/hosts
                TEMP=$TEMP,10.0.1.1$i
                done
-               echo $TEMP >> /etc/ansible/vars.yml
+               echo "    $TEMP" >> /etc/ansible/vars.yml
                if [ "$os" == "Debian Jessie" ] ;
                then
                /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git db.yml -e @/etc/ansible/vars.yml
