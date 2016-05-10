@@ -176,26 +176,13 @@ resources:
         flavor_name: { get_param: flavor_name }
         os_type: { get_param: os_type }
 
-  #db_nodes:
-  #    type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/db.heat.yaml
-  #    properties:
-  #       security_group: { get_resource: sg_db }
-  #       network: { get_resource: db_net }
-  #       subnet: { get_resource: db_subnet}
-  #       keypair_name: { get_param: keypair_name }
-  #       flavor_name: { get_param: flavor_name }
-  #       os_type: { get_param: os_type }
-  #       db_name: { get_param: database_name }
-  #       db_admin: { get_param: database_admin }
-  #       db_admin_password: { get_param: database_admin_password }
-
 
   db_nodes:
     type: OS::Heat::ResourceGroup
     properties:
       count: { get_param: number_db_clusters}
       resource_def:
-        type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/db1.heat.yaml
+        type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/db.heat.yaml
         properties:
           nodename:
             str_replace:
@@ -257,7 +244,7 @@ resources:
   floating_ip:
     type: OS::Neutron::FloatingIP
     properties:
-        floating_network_id: b5dd7532-1533-4b9c-8bf9-e66631a9be1d
+        floating_network_id:  6ea98324-0f14-49f6-97c0-885d1b8dc517
 
   vip_floating:
     type: OS::Neutron::FloatingIPAssociation
