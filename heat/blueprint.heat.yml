@@ -1,5 +1,4 @@
 heat_template_version: 2013-05-23
-
 description: All-in-one Blueprint
 parameters:
  keypair_name:
