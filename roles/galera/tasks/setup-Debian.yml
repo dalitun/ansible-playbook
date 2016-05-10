@@ -6,7 +6,7 @@
     - software-properties-common
     - python-software-properties
     - python-mysqldb
-    - rsync
+
 
 - name: Add repository key to the system on Debian family
   apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db

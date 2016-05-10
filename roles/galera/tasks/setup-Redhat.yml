@@ -8,17 +8,16 @@
 
 
 - name: packages installed
-  yum: pkg={{ item }} state=present
+  yum: pkg={{ item }} state=present enablerepo="mariadb"
   with_items:
-    - MariaDB
     - MariaDB-server
-  
+    - galera
 
-- name: stop mysqld
-  service: name=mysqld state=stopped enabled=yes
+- name: stop mysql
+  service: name=mysql state=stopped enabled=yes
 
 - name: Modify configuration file to listen on all interfaces
-  template: src=galera.cnf.j2 dest=/etc/my.cnf.d/galera.cnf
+  template: src=server.cnf.j2 dest=/etc/my.cnf.d/server.cnf
 
 
 

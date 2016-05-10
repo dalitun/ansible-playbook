@@ -10,21 +10,12 @@
   include: post-setup.yml
 
 - name: start master
-  shell: service mysql start --wsrep-new-cluster
-  when: master == true and ansible_os_family == 'Debian'
-
-
-- name: start master
-  shell: service mysqld start --wsrep-new-cluster
-  when: master == true and ansible_os_family == 'RedHat'
+  shell: galera_new_cluster
+  when: master == true
 
 - name: start mysql
   service: name=mysql state=started enabled=yes
-  when: master == false  and ansible_os_family == 'Debian'
-
-- name: start mysqld
-  service: name=mysqld state=started enabled=yes
-  when: master == false  and ansible_os_family == 'RedHat'
+  when: master == false
 
 - name: creating database MySQL database
   shell: mysql -u root -e "CREATE DATABASE IF NOT EXISTS {{ db_name }};"
