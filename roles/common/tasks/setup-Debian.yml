@@ -1,8 +1,6 @@
-#- name: apt-get update & upgrade
-#  apt: upgrade=full update_cache=yes
+- name: apt-get update & upgrade
+  apt: upgrade=full update_cache=yes
 
-- name: apt-get update
-  apt: update_cache=yes
 
 - name: install common packages
   apt:
