@@ -21,9 +21,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/templates/check_mysql.sh.j2" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/templates/keepalived.conf.j2" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/roles/keepalived/vars/main.yml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/blueprint.heat.yml" afterPath="$PROJECT_DIR$/heat/blueprint.heat.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/db.heat.yaml" afterPath="$PROJECT_DIR$/heat/db.heat.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" afterPath="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
@@ -45,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="blueprint.heat.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blueprint.heat.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heat/blueprint.heat.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65384614">
-              <caret line="299" column="8" selection-start-line="299" selection-start-column="8" selection-end-line="299" selection-end-column="8" />
+            <state vertical-scroll-proportion="-11.636364">
+              <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.333334">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.76704544">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,8 +135,8 @@
         <option value="$PROJECT_DIR$/heat/db1.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/db.heat.yaml" />
-        <option value="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/heat/blueprint.heat.yml" />
+        <option value="$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml" />
       </list>
     </option>
   </component>
@@ -745,26 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.97159094">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.333334">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -779,8 +760,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heat/blueprint.heat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65384614">
-          <caret line="299" column="8" selection-start-line="299" selection-start-column="8" selection-end-line="299" selection-end-column="8" />
+        <state vertical-scroll-proportion="-11.636364">
+          <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76704544">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
