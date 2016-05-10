@@ -86,30 +86,30 @@ resources:
               mkdir /etc/ansible
               echo "[local]" >> /etc/ansible/hosts
               echo "127.0.0.1 ansible_connection=local" >> /etc/ansible/hosts
-              cat << EOF > /etc/ansible/vars.yml
-              ip_node: 10.0.1.1$index
-              hostname: node$index
-              db_name: $db_name
-              db_admin: $db_admin
-              db_admin_password: $db_admin_password
-              master_ip: 10.0.1.10
-              #on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
-              pv_disk: /dev/vdb
-              vg_name: vg0
-              lv_name: global
-              lv_size : 8g             
+                cat << EOF > /etc/ansible/vars.yml
+                ip_node: 10.0.1.1$index
+                hostname: node$index
+                db_name: $db_name
+                db_admin: $db_admin
+                db_admin_password: $db_admin_password
+                master_ip: 10.0.1.10
+                #on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
+                pv_disk: /dev/vdb
+                vg_name: vg0
+                lv_name: global
+                lv_size : 8g
               EOF
 
               if [ $index -eq 0 ]
               then
-              echo "master: true" >> /etc/ansible/vars.yml
+              echo " master: true" >> /etc/ansible/vars.yml
               else
-              echo "master: false" >> /etc/ansible/vars.yml
+              echo " master: false" >> /etc/ansible/vars.yml
               fi
               START=1
               END=$clusters_size
               echo "10.0.1.10 node0" >> /etc/hosts
-              TEMP="clusters: 10.0.1.10"
+              TEMP=" clusters: 10.0.1.10"
               for ((i=1;i<$END;i++)); do 
               echo "10.0.1.1$i node$i" >> /etc/hosts
               TEMP=$TEMP,10.0.1.1$i
