@@ -5,14 +5,14 @@
 
 - name: Install repo Mariadb
   shell: wget -O /etc/yum.repos.d/MariaDB.repo http://mariadb.if-not-true-then-false.com/rhel/$(rpm -E %rhel)/$(uname -i)/10_1
-  when: database_type == 'mariadb'
+
 
 - name: packages installed
   yum: pkg={{ item }} state=present
   with_items:
     - MariaDB
     - MariaDB-server
-  when: database_type == 'mariadb'
+  
 
 - name: stop mysqld
   service: name=mysqld state=stopped enabled=yes
