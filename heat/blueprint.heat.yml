@@ -6,7 +6,7 @@ parameters:
     label: SSH Keypair
     type: string
  os_type:
-    default: Debian Jessie
+    default: Ubuntu 14.04
     description: os type
     label: os type
     type: string

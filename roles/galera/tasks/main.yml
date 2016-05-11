@@ -11,7 +11,11 @@
 
 - name: start master
   shell: galera_new_cluster
-  when: master == true
+  when: master == true and not (ansible_distribution_release == 'trusty')
+
+- name: start master for ubuntu 14.04
+  shell: service mysql start --wsrep-new-cluster
+  when: master == true and ansible_distribution_release == 'trusty'
 
 - name: start mysql
   service: name=mysql state=started enabled=yes
