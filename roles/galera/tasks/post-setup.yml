@@ -41,7 +41,7 @@
   when: ansible_os_family == "Debian"
 
 - name: change conf my.cnf Redhat
-  lineinfile: dest=/etc/my.cnf regexp='^datadir' line='datadir     = /DbStorage/mysql'
+  lineinfile: dest=/etc/init.d/mysql regexp='^datadir=$' line='datadir=/DbStorage/mysql'
   when: ansible_os_family == "RedHat"
 
 

@@ -6,7 +6,7 @@ parameters:
     label: SSH Keypair
     type: string
  os_type:
-    default: Ubuntu 14.04
+    default: Centos 7.2
     description: os type
     label: os type
     type: string
@@ -166,15 +166,15 @@ resources:
 
 
 
-  glusterfs_nodes:
-     type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/glusterfs.heat.yaml
-     properties:
-        security_group: { get_resource: sg_glusterfs }
-        network: { get_resource: nodes_net }
-        subnet: { get_resource: nodes_subnet }
-        keypair_name: { get_param: keypair_name }
-        flavor_name: { get_param: flavor_name }
-        os_type: { get_param: os_type }
+  #glusterfs_nodes:
+  #   type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/glusterfs.heat.yaml
+  #   properties:
+  #      security_group: { get_resource: sg_glusterfs }
+  #      network: { get_resource: nodes_net }
+  #      subnet: { get_resource: nodes_subnet }
+  #      keypair_name: { get_param: keypair_name }
+  #      flavor_name: { get_param: flavor_name }
+  #      os_type: { get_param: os_type }
 
 
   db_nodes:
