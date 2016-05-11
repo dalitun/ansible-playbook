@@ -1,8 +1,6 @@
-- name: packages installed
-  apt: pkg={{ item }} state=present
-  with_items:
-    - apache2
-    - libapache2-mod-php5
+- name:  install apache
+  apt: pkg=apache2 state=present
+
 
 - name: apache2 service state
   service: name=apache2 enabled=yes
