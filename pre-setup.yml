@@ -15,8 +15,8 @@
      action: shell nc -vz {{ gluster_ip }} 24007
      register: result
      until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
-     retries: 50
-     delay: 10
+     retries: 30
+     delay: 5
 
    - name: mount
      mount:

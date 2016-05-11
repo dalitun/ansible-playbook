@@ -24,5 +24,6 @@
 - name: Create readwrite user
   shell : |
            mysql -u root -e "CREATE USER '{{ db_admin }}'@'%' IDENTIFIED BY '{{ db_admin_password }}';"
-           mysql -u root -e "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON *.* TO '{{ db_admin }}'@'%';"
+           mysql -u root -e "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON {{ db_name }}.* TO '{{ db_admin }}'@'%';"
+           mysql -u root -e "flush privileges;"
   when: master == true
