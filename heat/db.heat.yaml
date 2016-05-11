@@ -89,7 +89,7 @@ resources:
                  hostname: node$index
                  db_name: $db_name
                  db_admin: $db_admin
-                 db_admin_password: $db_admin_password
+                 db_admin_password: $pass
                  master_ip: 10.0.1.10
                  #on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
                  pv_disk: /dev/vdb
@@ -125,7 +125,7 @@ resources:
             $index: { get_param: index }
             $db_name: { get_param: db_name}
             $db_admin: { get_param: db_admin }
-            $db_admin_password: { get_param: db_admin_password }
+            $pass: { get_param: db_admin_password }
             $os: { get_param: os_type }
             $clusters_size: { get_param: clusters_size }
   Data:
