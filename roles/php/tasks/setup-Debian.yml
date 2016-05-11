@@ -10,7 +10,7 @@
     - php5-json
     - php5-curl
     - php5-redis
-
+  when: not ansible_distribution_release == 'xenial'
 
 - name: packages installed Ubuntu xenial
   apt: pkg={{ item }} state=present
@@ -27,3 +27,4 @@
     - php-json
     - php-curl
     - php-redis
+  when: ansible_distribution_release == 'xenial'
