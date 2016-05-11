@@ -4,6 +4,6 @@
   user: cloud
   sudo: true
   roles:
-    - common
+    #- common
     - galera
 

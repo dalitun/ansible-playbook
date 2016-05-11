@@ -1,5 +1,5 @@
-clusters: 10.0.1.4
-ip_node: 10.0.1.4
+clusters: 10.0.1.6
+ip_node: 10.0.1.6
 hostname: node0
 master: true
 
@@ -11,4 +11,4 @@ db_admin_password: changeme
 pv_disk: /dev/vdb
 vg_name: vg0
 lv_name: global
-lv_size : 3g
+lv_size : 4g
