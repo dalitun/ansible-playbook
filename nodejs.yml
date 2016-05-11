@@ -10,5 +10,5 @@
       shell: git clone {{ Application_source }} /nodejs
       when: gluster_ip  == '10.0.0.120'
     - name: launch app
-      shell: node /nodejs/app.js > output.log &
+      shell: sudo node /nodejs/app.js > /tmp/output.log &
 
