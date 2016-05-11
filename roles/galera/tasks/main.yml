@@ -26,9 +26,8 @@
   when: master == false
 
 - name: create user database
-  template: src=user.sh.j2 dest=/root/user.sh mode=0755
-
-- name: Create readwrite user
-  shell : sudo /root/user.sh
-
-
+  shell: |
+          mysql -u root -e "CREATE USER IF NOT EXISTS '{{ db_admin }}'@'%' IDENTIFIED BY '{{ db_admin_password }}';"
+          mysql -u root -e "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON {{ db_name }}.* TO '{{ db_admin }}'@'%';"
+          mysql -u root -e "flush privileges;"
+  when: master == true

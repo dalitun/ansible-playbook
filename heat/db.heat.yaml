@@ -46,15 +46,12 @@ parameters:
     label: number of nodes
     type: number
   db_name:
-    description: database name
     label: database name
     type: string
   db_admin:
-    description: database name
     label: database admin
     type: string
   db_admin_password:
-    description: database admin password
     label: database admin password
     type: string
 
@@ -94,7 +91,6 @@ resources:
                  db_admin: $db_admin
                  db_admin_password: $db_admin_password
                  master_ip: 10.0.1.10
-                 clusters_size: $clusters_size
                  #on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
                  pv_disk: /dev/vdb
                  vg_name: vg0

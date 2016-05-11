@@ -74,7 +74,7 @@ parameters:
 
 
  database_admin_password:
-    default: changeme
+    default: changeme123
     description: database password admin
     label: database password admin
     type: string
