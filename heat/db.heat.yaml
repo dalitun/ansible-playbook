@@ -29,19 +29,8 @@ parameters:
     label: pool id
     type: string
   flavor_name:
-    default: n2.cw.standard-1
     type: string
     label: Instance Type (Flavor)
-    constraints:
-      - allowed_values:
-          - s1.cw.small-1
-          - n2.cw.standard-1
-          - n2.cw.standard-2
-          - n1.cw.standard-4
-          - n1.cw.standard-8
-          - n1.cw.standard-12
-          - n1.cw.standard-16
-          - n1.cw.highmem-4
   clusters_size:
     label: number of nodes
     type: number
