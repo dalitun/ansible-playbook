@@ -13,11 +13,10 @@
     - "{{ gluster_mount_dir }}"
 
 - name : wait gluster 2 is up
-  action: shell nc -vz {{ node.2 }} 24007
-  register: result
-  until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
-  retries: 10
-  delay: 5
+  wait_for: host={{ item }} port=24007
+  with_items:
+    - node.1
+    - node.2
   when: ansible_default_ipv4.address=="{{ node.1 }}"
 
 

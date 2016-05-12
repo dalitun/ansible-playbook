@@ -11,12 +11,9 @@
    - name: create Application
      file: path={{ app_directory }} state=directory recurse=yes mode=0755
 
-   - name : wait gluster is up
-     action: shell nc -vz {{ gluster_ip }} 24007
-     register: result
-     until: result.stdout.find("succeeded") != -1 or result.stdout.find("open") != -1
-     retries: 80
-     delay: 2
+   - name: Check gluster will be up
+     wait_for: host={{ gluster_ip }} port=24007
+
 
    - name: mount
      mount:
