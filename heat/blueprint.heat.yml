@@ -35,16 +35,16 @@ parameters:
  nodes_number:
     default: 2
     description: number of web servers 10 nodes
-    label: number of nodes
+    label: number of front nodes
     type: number
     constraints:
-      - range: { min: 2, max: 6 }
+      - range: { min: 0, max: 6 }
 
  nodes_flavor_name:
     default: s1.cw.small-1
     description: Flavor to use for the deployed instance
     type: string
-    label: Instance Type (Flavor)
+    label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
           - s1.cw.small-1
@@ -58,25 +58,27 @@ parameters:
  number_db_clusters:
     default: 2
     description: number of web servers 10 nodes
-    label: number of nodes
+    label: number of database clusters
     type: number
     constraints:
-      - range: { min: 1, max: 4 }
+      - range: { min: 0, max: 4 }
 
  database_name:
     default: mytrip
-    description: database type
+    description: database name
+    label: database name
     type: string
 
  database_admin:
     default: admin
-    description: database type
+    description: database user
+    label: database user
     type: string
 
 
  database_admin_password:
     description: database password admin
-    label: database password admin
+    label: password database user
     type: string
     hidden: true
 
@@ -84,7 +86,7 @@ parameters:
     default: s1.cw.small-1
     description: Flavor to use for the deployed instance
     type: string
-    label: Instance Type (Flavor)
+    label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
           - s1.cw.small-1
@@ -184,13 +186,13 @@ resources:
 
 
   glusterfs_nodes:
-     type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/glusterfs.heat.yaml
+     type: http://storage.fr1.cloudwatt.net:8080/v1/AUTH_467b00f998064f1688feeca95bdc7a88/blueprint/glusterfs.heat.yaml
      properties:
         security_group: { get_resource: sg_glusterfs }
         network: { get_resource: nodes_net }
         subnet: { get_resource: nodes_subnet }
         keypair_name: { get_param: keypair_name }
-        flavor_name: { get_param: flavor_name }
+        flavor_name: { get_param: nodes_flavor_name }
         os_type: { get_param: os_type }
 
 
@@ -199,7 +201,7 @@ resources:
     properties:
       count: { get_param: number_db_clusters}
       resource_def:
-        type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/db.heat.yaml
+        type: http://storage.fr1.cloudwatt.net:8080/v1/AUTH_467b00f998064f1688feeca95bdc7a88/blueprint/db.heat.yaml
         properties:
           nodename:
             str_replace:
@@ -227,7 +229,7 @@ resources:
     properties:
       count: { get_param: nodes_number}
       resource_def:
-        type: https://raw.githubusercontent.com/dalitun/ansible-playbook/master/heat/node.heat.yaml
+        type: http://storage.fr1.cloudwatt.net:8080/v1/AUTH_467b00f998064f1688feeca95bdc7a88/blueprint/node.heat.yaml
         properties:
           nodename:
             str_replace:
