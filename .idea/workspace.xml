@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17993a94-98e3-4955-89cd-ea127192c23f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" afterPath="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pre-setup.yml" afterPath="$PROJECT_DIR$/pre-setup.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodejs.yml" afterPath="$PROJECT_DIR$/nodejs.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,28 +26,28 @@
       <file leaf-file-name="blueprint.heat.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heatfr2/blueprint.heat.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.74074">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.185185">
+              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pre-setup.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+      <file leaf-file-name="php.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4346591">
-              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+            <state vertical-scroll-proportion="-6.6666665">
+              <caret line="10" column="164" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="169" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="glusterfs.heat.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+      <file leaf-file-name="nodejs.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nodejs.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.74074">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.23011364">
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -97,7 +95,6 @@
         <option value="$PROJECT_DIR$/roles/db/templates/user.sh" />
         <option value="$PROJECT_DIR$/roles/galera/vars/main.yml" />
         <option value="$PROJECT_DIR$/roles/galera/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/nodejs.yml" />
         <option value="$PROJECT_DIR$/roles/tomcat/tasks/main.yml" />
         <option value="$PROJECT_DIR$/roles/apache/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/roles/php/tasks/setup-Debian.yml" />
@@ -107,6 +104,7 @@
         <option value="$PROJECT_DIR$/heat/glusterfs.heat.yaml" />
         <option value="$PROJECT_DIR$/heatfr2/blueprint.heat.yml" />
         <option value="$PROJECT_DIR$/pre-setup.yml" />
+        <option value="$PROJECT_DIR$/nodejs.yml" />
       </list>
     </option>
   </component>
@@ -830,13 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28125">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2556818">
@@ -991,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nodejs.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31213874">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/tomcat/files/tomcat.service">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2753825">
@@ -1148,26 +1132,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.74074">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4346591">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="10" column="164" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="169" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/heatfr2/blueprint.heat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.74074">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.185185">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pre-setup.yml">
+    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4346591">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state vertical-scroll-proportion="-0.9943182">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23011364">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
           <folding />
         </state>
       </provider>
