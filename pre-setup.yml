@@ -14,7 +14,6 @@
    - name: Check gluster will be up
      wait_for: host={{ gluster_ip }} port=24007
 
-
    - name: mount
      mount:
       name: "{{ app_directory }}"
@@ -23,3 +22,7 @@
       opts: "defaults,_netdev"
       state: mounted
 
+   - name: shell mount
+     shell: |
+             wait 20
+             mount -a
