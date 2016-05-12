@@ -39,8 +39,9 @@ parameters:
     type: number
     constraints:
       - range: { min: 2, max: 6 }
- flavor_name:
-    default: n2.cw.standard-1
+
+ nodes_flavor_name:
+    default: s1.cw.small-1
     description: Flavor to use for the deployed instance
     type: string
     label: Instance Type (Flavor)
@@ -74,10 +75,26 @@ parameters:
 
 
  database_admin_password:
-    default: changeme123
     description: database password admin
     label: database password admin
     type: string
+    hidden: true
+
+ db_flavor_name:
+    default: s1.cw.small-1
+    description: Flavor to use for the deployed instance
+    type: string
+    label: Instance Type (Flavor)
+    constraints:
+      - allowed_values:
+          - s1.cw.small-1
+          - n2.cw.standard-1
+          - n2.cw.standard-2
+          - n1.cw.standard-4
+          - n1.cw.standard-8
+          - n1.cw.standard-12
+          - n1.cw.standard-16
+          - n1.cw.highmem-4
 
 resources:
   db_net:
@@ -196,7 +213,7 @@ resources:
           index: "%index%"
           nodeip: "10.0.1.1%index%"
           keypair_name: { get_param: keypair_name }
-          flavor_name: { get_param: flavor_name }
+          flavor_name: { get_param: db_flavor_name }
           os_type: { get_param: os_type }
           db_name: { get_param: database_name }
           db_admin: { get_param: database_admin }
@@ -224,7 +241,7 @@ resources:
           index: "%index%"
           nodeip: "10.0.0.11%index%"
           keypair_name: { get_param: keypair_name }
-          flavor_name: { get_param: flavor_name }
+          flavor_name: { get_param: nodes_flavor_name }
           os_type: { get_param: os_type }
           Application_type: { get_param: Application_type }
           Application_source: { get_param: Application_source }
@@ -301,10 +318,15 @@ outputs:
   FloatingIP:
     description: Service public VIP
     value: { get_attr: [floating_ip, floating_ip_address] }
-  VIP_web:
-    description: Internal VIP
+  web_VIP:
+    description: Internal VIP web
     value: { get_attr: [pool_web, vip, address] }
-  VIP_db:
+  db_VIP:
     description: Internal VIP db
     value: { get_attr: [pool_db, vip, address] }
-
+  db_name:
+    description: database name
+    value: { get_param: database_name }
+  db_user:
+    description: database user
+    value: { get_param: database_admin }

@@ -44,7 +44,6 @@ parameters:
     label: database admin password
     type: string
 
-
 resources:
   db_port:
       type: OS::Neutron::Port
