@@ -7,12 +7,14 @@ parameters:
     label: subnet
     type: string
   os_type:
+    description: os type
     label: os type
     type: string
   security_group:
     label: security_group
     type: string
   keypair_name:
+    description: Keypair to inject in instance
     label: SSH Keypair
     type: string
   flavor_name:
