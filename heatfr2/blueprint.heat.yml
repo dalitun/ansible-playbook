@@ -217,7 +217,7 @@ resources:
                template: $stack-glusterfs-%index%
                params:
                   $stack: { get_param: 'OS::stack_name' }
-          security_group: { get_resource: sg_glustrerfs }
+          security_group: { get_resource: sg_glusterfs }
           network: { get_resource: nodes_net }
           subnet: {get_resource: nodes_subnet }
           index: "%index%"

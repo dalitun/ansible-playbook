@@ -41,7 +41,7 @@ parameters:
 
 resources:
 
- glusterfs_port:
+  glusterfs_port:
       type: OS::Neutron::Port
       properties:
         network: { get_param: network }
@@ -55,15 +55,11 @@ resources:
     type: OS::Nova::Server
     properties:
       key_name: { get_param: keypair_name }
-      name:
-         str_replace:
-           template: $stack-gluster1
-           params:
-              $stack: { get_param: 'OS::stack_name' }
+      name: {get_param: nodename }
       image: { get_param: os_type }
       flavor: { get_param: flavor_name }
       networks:
-        - port: { get_resource: gluster_port1 }
+        - port: { get_resource: glusterfs_port }
       user_data_format: RAW
       user_data:
         str_replace:
@@ -80,9 +76,9 @@ resources:
                    Application_source: $Application_source
                    node:
                   EOF
-                    $END=$number_glusterfs
-                    for ((i=1;i<$END;i++)); do
-                    echo "   node.$i  10.0.1.12$i " >> /etc/ansible/hosts
+                    END=$number_glusterfs
+                    for ((i=0;i<$END;i++)); do
+                    echo "   node.$i  10.0.1.12$i" >> /etc/ansible/hosts
                     done
 
 

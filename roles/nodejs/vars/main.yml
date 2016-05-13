@@ -1,3 +1,3 @@
 ---
-Application_source: https://github.com/dalitun/node-hello-world.git
-gluster_ip: 10.0.0.120
+## nodejs version 0.10,0.12,4.x,5.x,6.x
+version: 6.x
