@@ -6,7 +6,7 @@ parameters:
     label: SSH Keypair
     type: string
  os_type:
-    default: Ubuntu 16.04
+    default: Ubuntu 14.04
     description: os type
     label: os type
     type: string
@@ -23,7 +23,7 @@ parameters:
     type: string
     constraints:
       - allowed_values:
-          - php5
+          - php
           - tomcat
           - nodejs
  Application_source:
@@ -192,6 +192,8 @@ resources:
         keypair_name: { get_param: keypair_name }
         flavor_name: { get_param: nodes_flavor_name }
         os_type: { get_param: os_type }
+        Application_type: { get_param: Application_type }
+        Application_source: { get_param: Application_source }
 
 
   db_nodes:
@@ -244,7 +246,6 @@ resources:
           flavor_name: { get_param: nodes_flavor_name }
           os_type: { get_param: os_type }
           Application_type: { get_param: Application_type }
-          Application_source: { get_param: Application_source }
 
 
 #--------------------------#

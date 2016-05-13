@@ -20,6 +20,12 @@ parameters:
   flavor_name:
     type: string
     label: Instance Type (Flavor)
+  Application_type:
+    label: Application_type
+    type: string
+  Application_source:
+    label: Application_source
+    type: string
 
 resources:
 
@@ -67,9 +73,12 @@ resources:
                    gluster_mount_dir: /mnt/gluster
                    gluster_brick_dir: /srv/gluster/brick
                    gluster_brick_name: gluster
+                   Application_source: $Application_source
                    node:
                      1: 10.0.0.120
                      2: 10.0.0.130
+                   Application_type: $Application_type
+                   Application_source: $Application_source
                   EOF
                   if [ "$os" == "Debian Jessie" ] ;
                   then
@@ -79,7 +88,8 @@ resources:
                   fi
           params:
                 $os: { get_param: os_type }
-
+                $Application_type: { get_param: Application_type }
+                $Application_source: { get_param: Application_source }
   gluster2:
     type: OS::Nova::Server
     properties:
@@ -108,6 +118,8 @@ resources:
                    node:
                      1: 10.0.0.120
                      2: 10.0.0.130
+                   Application_type: $Application_type
+                   Application_source: $Application_source
                   EOF
                   if [ "$os" == "Debian Jessie" ] ;
                   then
@@ -117,3 +129,5 @@ resources:
                   fi
           params:
                 $os: { get_param: os_type }
+                $Application_type: { get_param: Application_type }
+                $Application_source: { get_param: Application_source }
