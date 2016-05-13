@@ -66,19 +66,9 @@ resources:
              mkdir /etc/ansible
              echo "[local]" >> /etc/ansible/hosts
              echo "127.0.0.1 ansible_connection=local" >> /etc/ansible/hosts
-              rem=$(( $index % 2 ))
-              if [ $rem -eq 0 ]
-              then
                 cat << EOF > /etc/ansible/vars.yml
                  Application_type: $Application_type
-                 gluster_ip: 10.0.0.120
-             EOF
-              else
-                cat << EOF > /etc/ansible/vars.yml
-                 Application_type: $Application_type
-                 gluster_ip: 10.0.0.130
-             EOF
-              fi
+                 gluster_ip: 10.0.0.12$index
 
               case "$Application_type" in
 

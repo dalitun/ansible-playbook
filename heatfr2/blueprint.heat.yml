@@ -38,9 +38,32 @@ parameters:
     label: number of front nodes
     type: number
     constraints:
-      - range: { min: 0, max: 6 }
+      - range: { min: 2, max: 6 }
 
  nodes_flavor_name:
+    default: n2.cw.standard-1
+    description: Flavor to use for the deployed instance
+    type: string
+    label: Flavor Type for Front nodes
+    constraints:
+      - allowed_values:
+          - n2.cw.standard-1
+          - n2.cw.standard-2
+          - n1.cw.standard-4
+          - n1.cw.standard-8
+          - n1.cw.standard-12
+          - n1.cw.standard-16
+          - n1.cw.highmem-4
+
+ number_glusterfs:
+    default: 2
+    description: number of glusterfs
+    label: number of glusterfs
+    type: number
+    constraints:
+      - range: { min: 2, max: 2 }
+
+ glusterfs_flavor_name:
     default: n2.cw.standard-1
     description: Flavor to use for the deployed instance
     type: string
@@ -182,19 +205,29 @@ resources:
         - { direction: egress, protocol: UDP }
 
 
-
   glusterfs_nodes:
-     type: http://storage.fr2.cloudwatt.net:8080/v1/AUTH_7da34701e2fe488683d8a8382ee6f454/blueprint/glusterfs.heat.yaml
-     properties:
-        security_group: { get_resource: sg_glusterfs }
-        network: { get_resource: nodes_net }
-        subnet: { get_resource: nodes_subnet }
-        keypair_name: { get_param: keypair_name }
-        flavor_name: { get_param: nodes_flavor_name }
-        os_type: { get_param: os_type }
-        Application_type: { get_param: Application_type }
-        Application_source: { get_param: Application_source }
-
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: { get_param: number_glusterfs }
+      resource_def:
+        type: http://storage.fr2.cloudwatt.net:8080/v1/AUTH_7da34701e2fe488683d8a8382ee6f454/blueprint/glusterfs.heat.yaml
+        properties:
+          nodename:
+            str_replace:
+               template: $stack-glusterfs-%index%
+               params:
+                  $stack: { get_param: 'OS::stack_name' }
+          security_group: { get_resource: sg_glustrerfs }
+          network: { get_resource: nodes_net }
+          subnet: {get_resource: nodes_subnet }
+          index: "%index%"
+          nodeip: "10.0.0.12%index%"
+          keypair_name: { get_param: keypair_name }
+          flavor_name: { get_param: glusterfs_flavor_name }
+          os_type: { get_param: os_type }
+          Application_type: { get_param: Application_type }
+          Application_source: { get_param: Application_source }
+          number_glusterfs:  { get_param: number_glusterfs }
 
   db_nodes:
     type: OS::Heat::ResourceGroup
@@ -221,6 +254,7 @@ resources:
           db_admin: { get_param: database_admin }
           db_admin_password: { get_param: database_admin_password }
           clusters_size:  { get_param: number_db_clusters }
+
 
 
 

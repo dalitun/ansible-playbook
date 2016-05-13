@@ -10,6 +10,18 @@ parameters:
     description: os type
     label: os type
     type: string
+  nodename:
+    label: nodename
+    type: string
+  index:
+    label: index
+    type: string
+  nodeip:
+    label: nodeip
+    type: string
+  number_glusterfs:
+    label: number of nodes
+    type: number
   security_group:
     label: security_group
     type: string
@@ -29,26 +41,17 @@ parameters:
 
 resources:
 
-  gluster_port1:
-    type: OS::Neutron::Port
-    properties:
-      network_id: { get_param: network  }
-      fixed_ips:
-        - ip_address: 10.0.0.120
-          subnet_id: { get_param: subnet }
-      security_groups: [{ get_param: security_group }]
+ glusterfs_port:
+      type: OS::Neutron::Port
+      properties:
+        network: { get_param: network }
+        fixed_ips:
+          - ip_address: { get_param: nodeip }
+            subnet_id: { get_param: subnet }
+        security_groups:
+          - { get_param: security_group }
 
-  gluster_port2:
-    type: OS::Neutron::Port
-    properties:
-      network_id: { get_param: network }
-      fixed_ips:
-        - ip_address: 10.0.0.130
-          subnet_id: { get_param: subnet }
-      security_groups: [{ get_param: security_group }]
-
-
-  gluster1:
+  node:
     type: OS::Nova::Server
     properties:
       key_name: { get_param: keypair_name }
@@ -73,12 +76,16 @@ resources:
                    gluster_mount_dir: /mnt/gluster
                    gluster_brick_dir: /srv/gluster/brick
                    gluster_brick_name: gluster
-                   node:
-                     1: 10.0.0.120
-                     2: 10.0.0.130
                    Application_type: $Application_type
                    Application_source: $Application_source
+                   node:
                   EOF
+                    $END=$number_glusterfs
+                    for ((i=1;i<$END;i++)); do
+                    echo "   node.$i  10.0.1.12$i " >> /etc/ansible/hosts
+                    done
+
+
                   if [ "$os" == "Debian Jessie" ] ;
                   then
                   /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git glusterfs.yml -e @/etc/ansible/vars.yml
@@ -89,44 +96,4 @@ resources:
                 $os: { get_param: os_type }
                 $Application_type: { get_param: Application_type }
                 $Application_source: { get_param: Application_source }
-  gluster2:
-    type: OS::Nova::Server
-    properties:
-      key_name: { get_param: keypair_name }
-      image: { get_param: os_type }
-      name:
-         str_replace:
-           template: $stack-gluster2
-           params:
-              $stack: { get_param: 'OS::stack_name' }
-      flavor: { get_param: flavor_name }
-      networks:
-        - port: { get_resource: gluster_port2 }
-      user_data_format: RAW
-      user_data:
-        str_replace:
-          template: |
-                  #!/bin/bash
-                  mkdir /etc/ansible
-                  echo "[local]" >> /etc/ansible/hosts
-                  echo "127.0.0.1 ansible_connection=local" >> /etc/ansible/hosts
-                  cat << EOF > /etc/ansible/vars.yml
-                   gluster_mount_dir: /mnt/gluster
-                   gluster_brick_dir: /srv/gluster/brick
-                   gluster_brick_name: gluster
-                   node:
-                     1: 10.0.0.120
-                     2: 10.0.0.130
-                   Application_type: $Application_type
-                   Application_source: $Application_source
-                  EOF
-                  if [ "$os" == "Debian Jessie" ] ;
-                  then
-                  /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git glusterfs.yml -e @/etc/ansible/vars.yml
-                  else
-                  ansible-pull -U https://github.com/dalitun/ansible-playbook.git glusterfs.yml -e @/etc/ansible/vars.yml
-                  fi
-          params:
-                $os: { get_param: os_type }
-                $Application_type: { get_param: Application_type }
-                $Application_source: { get_param: Application_source }
+                $number_glusterfs: { get_param: number_glusterfs }
