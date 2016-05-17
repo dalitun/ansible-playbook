@@ -22,9 +22,6 @@ parameters:
   Application_type:
     label: Application_type
     type: string
-  Application_source:
-    label: Application_source
-    type: string
   security_group:
     label: security_group
     type: string
@@ -69,66 +66,38 @@ resources:
              mkdir /etc/ansible
              echo "[local]" >> /etc/ansible/hosts
              echo "127.0.0.1 ansible_connection=local" >> /etc/ansible/hosts
-              rem=$(( $index % 2 ))
-              if [ $rem -eq 0 ]
-              then
                 cat << EOF > /etc/ansible/vars.yml
-                 Application_source: $Application_source
-                 gluster_ip: 10.0.0.120
-             EOF
-              else
-                cat << EOF > /etc/ansible/vars.yml
-                 Application_source: $Application_source
-                 gluster_ip: 10.0.0.130
-             EOF
-              fi
-
+                 Application_type: $Application_type
+                 gluster_ip: 10.0.0.12$index
+              EOF
               case "$Application_type" in
 
               "php5")
                       echo "    app_directory: /var/www/html" >> /etc/ansible/vars.yml
 
                       if [ "$os" == "Debian Jessie" ] ;
-
-
                        then
-                       /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
-
-                       /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git php.yml -e @/etc/ansible/vars.yml
+                       /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git deploy_nodes.yml -e @/etc/ansible/vars.yml
                        else
-
-                       ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
-
-                       ansible-pull -U https://github.com/dalitun/ansible-playbook.git php.yml -e @/etc/ansible/vars.yml
+                       ansible-pull -U https://github.com/dalitun/ansible-playbook.git deploy_nodes.yml -e @/etc/ansible/vars.yml
 
                         fi
                                      ;;
               "tomcat")
                         echo "    app_directory: /opt/tomcat/webapps" >> /etc/ansible/vars.yml
-
                         if [ "$os" == "Debian Jessie" ] ;
                         then
-                        /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
-
-                        /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git tomcat.yml -e @/etc/ansible/vars.yml
+                        /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git deploy_nodes.yml -e @/etc/ansible/vars.yml
                         else
-
-                        ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
-
-                        ansible-pull -U https://github.com/dalitun/ansible-playbook.git tomcat.yml -e @/etc/ansible/vars.yml
+                        ansible-pull -U https://github.com/dalitun/ansible-playbook.git deploy_nodes.yml -e @/etc/ansible/vars.yml
                         fi
                                       ;;
               "nodejs") echo "    app_directory: /nodejs" >> /etc/ansible/vars.yml
-
                         if [ "$os" == "Debian Jessie" ] ;
                         then
-                         /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
-
-                         /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git nodejs.yml -e @/etc/ansible/vars.yml
+                         /usr/local/bin/ansible-pull -U https://github.com/dalitun/ansible-playbook.git deploy_nodes.yml -e @/etc/ansible/vars.yml
                          else
-                          ansible-pull -U https://github.com/dalitun/ansible-playbook.git pre-setup.yml -e @/etc/ansible/vars.yml
-
-                          ansible-pull -U https://github.com/dalitun/ansible-playbook.git nodejs.yml -e @/etc/ansible/vars.yml
+                          ansible-pull -U https://github.com/dalitun/ansible-playbook.git deploy_nodes.yml -e @/etc/ansible/vars.yml
 
                         fi
                                     ;;
@@ -140,7 +109,6 @@ resources:
 
             $index: { get_param: index }
             $Application_type: { get_param: Application_type }
-            $Application_source: { get_param: Application_source }
             $os: { get_param: os_type }
 
   member:

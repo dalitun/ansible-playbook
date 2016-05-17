@@ -6,7 +6,7 @@ parameters:
     label: SSH Keypair
     type: string
  os_type:
-    default: Ubuntu 16.04
+    default: Ubuntu 14.04
     description: os type
     label: os type
     type: string
@@ -23,7 +23,7 @@ parameters:
     type: string
     constraints:
       - allowed_values:
-          - php5
+          - php
           - tomcat
           - nodejs
  Application_source:
@@ -38,16 +38,38 @@ parameters:
     label: number of front nodes
     type: number
     constraints:
-      - range: { min: 0, max: 6 }
+      - range: { min: 2, max: 6 }
 
  nodes_flavor_name:
-    default: s1.cw.small-1
+    default: n2.cw.standard-1
     description: Flavor to use for the deployed instance
     type: string
     label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
-          - s1.cw.small-1
+          - n2.cw.standard-1
+          - n2.cw.standard-2
+          - n1.cw.standard-4
+          - n1.cw.standard-8
+          - n1.cw.standard-12
+          - n1.cw.standard-16
+          - n1.cw.highmem-4
+
+ number_glusterfs:
+    default: 2
+    description: number of glusterfs
+    label: number of glusterfs
+    type: number
+    constraints:
+      - range: { min: 2, max: 2 }
+
+ glusterfs_flavor_name:
+    default: n2.cw.standard-1
+    description: Flavor to use for the deployed instance
+    type: string
+    label: Flavor Type for Front nodes
+    constraints:
+      - allowed_values:
           - n2.cw.standard-1
           - n2.cw.standard-2
           - n1.cw.standard-4
@@ -83,13 +105,12 @@ parameters:
     hidden: true
 
  db_flavor_name:
-    default: s1.cw.small-1
+    default: n2.cw.standard-1
     description: Flavor to use for the deployed instance
     type: string
     label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
-          - s1.cw.small-1
           - n2.cw.standard-1
           - n2.cw.standard-2
           - n1.cw.standard-4
@@ -107,6 +128,7 @@ resources:
     properties:
       network_id: { get_resource: db_net }
       cidr: 10.0.1.0/24
+      dns_nameservers: [8.8.8.8 ,8.8.4.4]
       gateway_ip: 10.0.1.1
   nodes_net:
     type: OS::Neutron::Net
@@ -117,6 +139,7 @@ resources:
       network_id: { get_resource: nodes_net }
       ip_version: 4
       cidr: 10.0.0.0/24
+      dns_nameservers: [8.8.8.8 ,8.8.4.4]
       allocation_pools:
         - { start: 10.0.0.10, end: 10.0.0.199 }
 
@@ -184,17 +207,29 @@ resources:
         - { direction: egress, protocol: UDP }
 
 
-
   glusterfs_nodes:
-     type: http://storage.fr1.cloudwatt.net:8080/v1/AUTH_467b00f998064f1688feeca95bdc7a88/blueprint/glusterfs.heat.yaml
-     properties:
-        security_group: { get_resource: sg_glusterfs }
-        network: { get_resource: nodes_net }
-        subnet: { get_resource: nodes_subnet }
-        keypair_name: { get_param: keypair_name }
-        flavor_name: { get_param: nodes_flavor_name }
-        os_type: { get_param: os_type }
-
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: { get_param: number_glusterfs }
+      resource_def:
+        type: http://storage.fr1.cloudwatt.net:8080/v1/AUTH_467b00f998064f1688feeca95bdc7a88/blueprint/glusterfs.heat.yaml
+        properties:
+          nodename:
+            str_replace:
+               template: $stack-glusterfs-%index%
+               params:
+                  $stack: { get_param: 'OS::stack_name' }
+          security_group: { get_resource: sg_glusterfs }
+          network: { get_resource: nodes_net }
+          subnet: {get_resource: nodes_subnet }
+          index: "%index%"
+          nodeip: "10.0.0.12%index%"
+          keypair_name: { get_param: keypair_name }
+          flavor_name: { get_param: glusterfs_flavor_name }
+          os_type: { get_param: os_type }
+          Application_type: { get_param: Application_type }
+          Application_source: { get_param: Application_source }
+          number_glusterfs:  { get_param: number_glusterfs }
 
   db_nodes:
     type: OS::Heat::ResourceGroup
@@ -224,6 +259,7 @@ resources:
 
 
 
+
   web_nodes:
     type: OS::Heat::ResourceGroup
     properties:
@@ -246,7 +282,6 @@ resources:
           flavor_name: { get_param: nodes_flavor_name }
           os_type: { get_param: os_type }
           Application_type: { get_param: Application_type }
-          Application_source: { get_param: Application_source }
 
 
 #--------------------------#
