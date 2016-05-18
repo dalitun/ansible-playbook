@@ -11,8 +11,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/tomcat.retry" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/tomcat.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glusterfs.yml" afterPath="$PROJECT_DIR$/glusterfs.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" afterPath="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" afterPath="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +54,8 @@
       <file leaf-file-name="glusterfs.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/glusterfs.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56330013">
-              <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.3328592">
+              <caret line="13" column="76" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -842,8 +840,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/glusterfs.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56330013">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.3328592">
+          <caret line="13" column="76" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
           <folding />
         </state>
       </provider>
