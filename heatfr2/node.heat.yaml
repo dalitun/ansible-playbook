@@ -72,7 +72,7 @@ resources:
              EOF
               case "$Application_type" in
 
-              "php5")
+              "php")
                       echo "    app_directory: /var/www/html" >> /etc/ansible/vars.yml
 
                       if [ "$os" == "Debian Jessie" ] ;
