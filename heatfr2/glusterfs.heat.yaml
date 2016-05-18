@@ -78,7 +78,7 @@ resources:
                   EOF
                     END=$number_glusterfs
                     for ((i=0;i<$END;i++)); do
-                    echo "   node.$i  10.0.1.12$i" >> /etc/ansible/vars.yml
+                    echo "   $i: 10.0.1.12$i" >> /etc/ansible/vars.yml
                     done
 
 
