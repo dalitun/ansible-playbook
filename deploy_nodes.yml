@@ -14,8 +14,7 @@
        mount:
         name: "{{ app_directory }}"
         src: "{{ gluster_ip }}:/gluster"
-        fstype: glusterfs
-        opts: "defaults,_netdev"
+        fstype: nfs
         state: mounted
        ignore_errors: yes
 

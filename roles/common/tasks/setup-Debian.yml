@@ -8,6 +8,7 @@
     state: installed
   with_items:
     - glusterfs-client
+    - nfs-common
     - git
     - rsync
 

@@ -31,6 +31,7 @@
      - wget
      - git
      - rsync
+     - nfs-utils
 - name: Set selinux into 'permissive' mode.
   selinux: policy=targeted state=permissive
 

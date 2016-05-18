@@ -10,8 +10,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/pre-setup.yml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/tomcat.retry" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/tomcat.yml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" afterPath="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deploy_nodes.yml" afterPath="$PROJECT_DIR$/deploy_nodes.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml" afterPath="$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" afterPath="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,21 +33,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="glusterfs.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/glusterfs.yml">
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/roles/galera/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0">
-              <caret line="18" column="85" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roles/common/handlers/main.yml">
+      <file leaf-file-name="deploy_nodes.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/deploy_nodes.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.40967283">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -57,46 +58,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post-setup.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/roles/galera/tasks/post-setup.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85917497">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup-Debian.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.703703">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup-Redhat.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Redhat.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.333333">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roles/galera/tasks/main.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333">
-              <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -148,7 +109,6 @@
         <option value="$PROJECT_DIR$/roles/nodejs/tasks/setup-RedHat.yml" />
         <option value="$PROJECT_DIR$/roles/nodejs/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/roles/nodejs/vars/main.yml" />
-        <option value="$PROJECT_DIR$/deploy_nodes.yml" />
         <option value="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" />
         <option value="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
@@ -157,9 +117,10 @@
         <option value="$PROJECT_DIR$/glusterfs.yml" />
         <option value="$PROJECT_DIR$/heatfr2/blueprint.heat.yml" />
         <option value="$PROJECT_DIR$/heat/blueprint.heat.yml" />
+        <option value="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" />
+        <option value="$PROJECT_DIR$/deploy_nodes.yml" />
         <option value="$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml" />
         <option value="$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml" />
-        <option value="$PROJECT_DIR$/roles/galera/tasks/post-setup.yml" />
       </list>
     </option>
   </component>
@@ -845,14 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5263158">
-          <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/heatfr2/node.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43669987">
@@ -865,14 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.88889">
           <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy_nodes.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -897,14 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43527737">
           <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/glusterfs.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="18" column="85" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -941,14 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.051209103">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/galera/handlers/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -965,10 +894,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
+    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/post-setup.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6415363">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.39829302">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heat/glusterfs.heat.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5476529">
+          <caret line="80" column="40" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glusterfs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46088195">
+          <caret line="18" column="85" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -981,9 +926,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9487909">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Redhat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333">
+        <state vertical-scroll-proportion="0.5889047">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
@@ -997,10 +950,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/setup-Debian.yml">
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Debian.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.703703">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25604552">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/setup-Redhat.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70554763">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1013,10 +974,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/galera/tasks/post-setup.yml">
+    <entry file="file://$PROJECT_DIR$/deploy_nodes.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85917497">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.40967283">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
       </provider>
