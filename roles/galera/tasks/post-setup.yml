@@ -38,7 +38,7 @@
 
 - name: change conf my.cnf Debian
   lineinfile: dest=/etc/mysql/my.cnf regexp='^datadir' line='datadir     = /DbStorage/mysql'
-  when: ansible_os_family == "Debian"
+  when: ansible_os_family == "Debian" and not (ansible_distribution_release == 'xenial')
 
 
 #- name: Modify configuration mylvmbackup
