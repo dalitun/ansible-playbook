@@ -10,19 +10,17 @@
 
   tasks:
 
-    - name: test
-      shell: echo "{{ Application_type}} , {{ node.0 }} ,{{ node.1 }} " >> /tmp/test.txt
 
     - name: deploy php
       shell: git clone {{ Application_source }} {{ gluster_brick_dir }}/tmp && cp {{ gluster_brick_dir }}/tmp/* {{ gluster_brick_dir }} && rm -rf {{  gluster_brick_dir }}/tmp
-      when: ansible_default_ipv4.address== {{ node.0 }} and Application_type == php
+      when: ansible_default_ipv4.address== '{{ node.0 }}' and Application_type == 'php'
 
     - name: deploy node
       shell: git clone {{ Application_source }} {{ gluster_brick_dir }}/tmp/ && cp {{ gluster_brick_dir }}/tmp/* {{ gluster_brick_dir }} && rm -rf {{ gluster_brick_dir }}/tmp
-      when: ansible_default_ipv4.address== {{ node.0 }} and Application_type == nodejs
+      when: ansible_default_ipv4.address== '{{ node.0 }}' and Application_type == 'nodejs'
 
     - name: Deploy war
       get_url: url={{ Application_source }} dest={{ gluster_brick_dir }}/myapp.war validate_certs=False
-      when: ansible_default_ipv4.address== {{ node.0 }} and Application_type == tomcat
+      when: ansible_default_ipv4.address== '{{ node.0 }}' and Application_type == 'tomcat'
 
 

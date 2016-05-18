@@ -11,6 +11,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/tomcat.retry" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/tomcat.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glusterfs.yml" afterPath="$PROJECT_DIR$/glusterfs.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" afterPath="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" />
     </list>
     <ignored path="ansible-playbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-15.037037">
-              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+              <caret line="80" column="39" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -54,8 +55,8 @@
       <file leaf-file-name="glusterfs.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/glusterfs.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3328592">
-              <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.5889047">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -126,8 +127,8 @@
         <option value="$PROJECT_DIR$/heatfr2/node.heat.yaml" />
         <option value="$PROJECT_DIR$/heat/node.heat.yaml" />
         <option value="$PROJECT_DIR$/deploy_nodes.yml" />
-        <option value="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" />
         <option value="$PROJECT_DIR$/roles/glusterfs/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml" />
         <option value="$PROJECT_DIR$/glusterfs.yml" />
       </list>
     </option>
@@ -814,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.333334">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roles/glusterfs/vars/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6666667">
@@ -833,15 +826,23 @@
     <entry file="file://$PROJECT_DIR$/heatfr2/glusterfs.heat.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.037037">
-          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+          <caret line="80" column="39" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/glusterfs/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.333334">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/glusterfs.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328592">
-          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.5889047">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
           <folding />
         </state>
       </provider>
