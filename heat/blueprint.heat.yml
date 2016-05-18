@@ -33,20 +33,21 @@ parameters:
     type: string
 
  nodes_number:
-    default: 2
+    default: 0
     description: number of web servers 10 nodes
     label: number of front nodes
     type: number
     constraints:
-      - range: { min: 2, max: 6 }
+      - range: { min: 0, max: 6 }
 
  nodes_flavor_name:
-    default: n2.cw.standard-1
+    default: n1.cw.standard-1
     description: Flavor to use for the deployed instance
     type: string
     label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
+          - n1.cw.standard-1
           - n2.cw.standard-1
           - n2.cw.standard-2
           - n1.cw.standard-4
@@ -61,15 +62,16 @@ parameters:
     label: number of glusterfs
     type: number
     constraints:
-      - range: { min: 2, max: 2 }
+      - range: { min: 0, max: 2 }
 
  glusterfs_flavor_name:
-    default: n2.cw.standard-1
+    default: n1.cw.standard-1
     description: Flavor to use for the deployed instance
     type: string
     label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
+          - n1.cw.standard-1
           - n2.cw.standard-1
           - n2.cw.standard-2
           - n1.cw.standard-4
@@ -78,7 +80,7 @@ parameters:
           - n1.cw.standard-16
           - n1.cw.highmem-4
  number_db_clusters:
-    default: 2
+    default: 0
     description: number of web servers 10 nodes
     label: number of database clusters
     type: number
@@ -105,12 +107,13 @@ parameters:
     hidden: true
 
  db_flavor_name:
-    default: n2.cw.standard-1
+    default: n1.cw.standard-1
     description: Flavor to use for the deployed instance
     type: string
     label: Flavor Type for Front nodes
     constraints:
       - allowed_values:
+          - n1.cw.standard-1
           - n2.cw.standard-1
           - n2.cw.standard-2
           - n1.cw.standard-4
@@ -128,7 +131,6 @@ resources:
     properties:
       network_id: { get_resource: db_net }
       cidr: 10.0.1.0/24
-      dns_nameservers: [8.8.8.8 ,8.8.4.4]
       gateway_ip: 10.0.1.1
   nodes_net:
     type: OS::Neutron::Net
@@ -139,7 +141,6 @@ resources:
       network_id: { get_resource: nodes_net }
       ip_version: 4
       cidr: 10.0.0.0/24
-      dns_nameservers: [8.8.8.8 ,8.8.4.4]
       allocation_pools:
         - { start: 10.0.0.10, end: 10.0.0.199 }
 

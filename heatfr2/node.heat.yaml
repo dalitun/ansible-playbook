@@ -69,7 +69,7 @@ resources:
                 cat << EOF > /etc/ansible/vars.yml
                  Application_type: $Application_type
                  gluster_ip: 10.0.0.12$index
-              EOF
+             EOF
               case "$Application_type" in
 
               "php5")

@@ -33,12 +33,12 @@ parameters:
     type: string
 
  nodes_number:
-    default: 2
+    default: 0
     description: number of web servers 10 nodes
     label: number of front nodes
     type: number
     constraints:
-      - range: { min: 2, max: 6 }
+      - range: { min: 0, max: 6 }
 
  nodes_flavor_name:
     default: n2.cw.standard-1
@@ -78,7 +78,7 @@ parameters:
           - n1.cw.standard-16
           - n1.cw.highmem-4
  number_db_clusters:
-    default: 2
+    default: 0
     description: number of web servers 10 nodes
     label: number of database clusters
     type: number
