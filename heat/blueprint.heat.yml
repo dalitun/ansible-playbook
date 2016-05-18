@@ -15,7 +15,7 @@ parameters:
           - Ubuntu 14.04
           - Debian Jessie
           - Centos 7.2
-          - Ubuntu 16.04
+          - ubuntu16-ju
  Application_type:
     default: nodejs
     description: Application type

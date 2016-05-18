@@ -1,6 +1,6 @@
 - name: apt-get update & upgrade
   apt: upgrade=full update_cache=yes
-
+  ignore_errors: yes
 
 - name: install common packages
   apt:
