@@ -17,7 +17,7 @@
         fstype: glusterfs
         opts: "defaults,_netdev"
         state: mounted
-        ignore_errors: True
+       ignore_errors: yes
 
 
      - name: cron mount
