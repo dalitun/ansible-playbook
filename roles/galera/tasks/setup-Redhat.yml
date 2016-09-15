@@ -13,8 +13,6 @@
     - MariaDB-server
     - galera
 
-- name: stop mysql
-  service: name=mysql state=stopped enabled=yes
 
 - name: Modify configuration file to listen on all interfaces
   template: src=server.cnf.j2 dest=/etc/my.cnf.d/server.cnf

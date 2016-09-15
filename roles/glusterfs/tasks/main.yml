@@ -7,28 +7,16 @@
   when: ansible_os_family == 'Debian'
 
 - name: Ensure Gluster brick and mount directories exist.
-  file: "path={{ item }} state=directory mode=0775"
-  with_items:
-    - "{{ gluster_brick_dir }}"
-    - "{{ gluster_mount_dir }}"
-
-- name : wait gluster 2 is up
-  wait_for: host={{ node.1}} port=24007
-  when: ansible_default_ipv4.address=='{{ node.0 }}'
+  file: "path={{ gluster_brick_dir }} state=directory mode=0775"
 
 
-- name: Configure Gluster volume.
-  gluster_volume:
-     state: present
-     name: "{{ gluster_brick_name }}"
-     brick: "{{ gluster_brick_dir }}"
-     replicas: 2
-     cluster: "{{ node.0 }},{{ node.1 }}"
-     host: "{{ ansible_default_ipv4.address }}"
-     force: yes
-  when:  ansible_default_ipv4.address=='{{ node.0 }}'
+- name: Create Gluster volume
+  gluster_volume: brick={{gluster_brick_dir}} force=true
+                  cluster={{storage_nodes | join(",")}}
+                  replicas={{gluster_replicas}} name={{gluster_volume}} state=present
+  run_once: true
+  ignore_errors: True
 
 - name: Start Gluster volume
-  gluster_volume: name={{ gluster_brick_name }} state=started
-  when: ansible_default_ipv4.address=='{{ node.0 }}'
-
+  gluster_volume: name={{gluster_volume}} state=started
+  ignore_errors: True

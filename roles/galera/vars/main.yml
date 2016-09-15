@@ -3,13 +3,7 @@ ip_node: 10.0.1.6
 hostname: node0
 master: true
 clusters_size: 1
-
 db_name: test
 db_admin: admin
 db_admin_password: changeme
-
-#on pv_disk you can use many disks juste add , exemple /dev/vdb , /dev/vdc
-pv_disk: /dev/vdb
-vg_name: vg0
-lv_name: global
-lv_size : 4g
+datadir: /DbStorage/mysql

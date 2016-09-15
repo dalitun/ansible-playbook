@@ -1,27 +1,6 @@
 
-#- name: upgrade all packages
-#  yum: name=* state=latest
-
-- name: Fetch glusterfs repo file
-  get_url: dest=/etc/yum.repos.d/glusterfs-epel.repo
-           url=http://download.gluster.org/pub/gluster/glusterfs/LATEST/EPEL.repo/glusterfs-epel.repo
-
-- name: Set repo file permissions
-  file: owner=root group=root mode=0644
-        path=/etc/yum.repos.d/glusterfs-epel.repo
-
-- name: get rpm nc
-  get_url: dest=/tmp/nc-1.84-24.el6.x86_64.rpm  url=ftp://195.220.108.108/linux/centos/6.7/os/x86_64/Packages/nc-1.84-24.el6.x86_64.rpm
-
-- name: install rpm nc
-  yum: pkg=/tmp/nc-1.84-24.el6.x86_64.rpm state=installed
-
-
-- name: Install glusterfs client  packages Redhat
-  yum: name={{item}} state=installed enablerepo="glusterfs-epel"
-  with_items:
-     - glusterfs
-     - glusterfs-fuse
+- name: upgrade all packages
+  yum: name=* state=latest
 
 
 - name: Ensure build dependencies are installed (RedHat).
@@ -31,11 +10,19 @@
      - wget
      - git
      - rsync
-     - nfs-utils
+     - vim
+     - htop
+     - mariadb
+     - zip
+     - unzip
+
+
 - name: Set selinux into 'permissive' mode.
   selinux: policy=targeted state=permissive
 
 - name: change conf selinux Redhat
   lineinfile: dest=/etc/selinux/config  regexp="^SELINUX=" line="SELINUX=disabled"
 
+- name: change time zone
+  shell: timedatectl set-timezone {{ timezone }}
 

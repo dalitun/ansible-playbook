@@ -1,6 +1,7 @@
-gluster_mount_dir: /mnt/gluster
+version: 3.8
 gluster_brick_dir: /srv/gluster/brick
-gluster_brick_name: gluster
-node:
-  0: 10.0.0.120
-  1: 10.0.0.121
+gluster_volume: gluster
+gluster_replicas: 2
+storage_nodes:
+    - 10.42.42.102
+    - 10.42.42.103    

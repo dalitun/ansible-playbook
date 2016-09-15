@@ -6,8 +6,4 @@
   include: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- name : clear /var/www/html
-  file: path=/var/www/html/* state=absent
-
-
 

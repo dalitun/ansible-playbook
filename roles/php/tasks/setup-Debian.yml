@@ -10,7 +10,9 @@
     - php5-json
     - php5-curl
     - php5-redis
-  when: not ansible_distribution_release == 'xenial'
+    - php5-memcache
+    - php5-xsl
+  when: not (ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial')
 
 - name: packages installed Ubuntu xenial
   apt: pkg={{ item }} state=present
@@ -18,7 +20,6 @@
     - php
     - libapache2-mod-php
     - php-mysql
-    - php-curl
     - php-gd
     - php-mbstring
     - php-mcrypt
@@ -27,4 +28,6 @@
     - php-json
     - php-curl
     - php-redis
-  when: ansible_distribution_release == 'xenial'
+    - php-memcache
+    - php-xsl
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'

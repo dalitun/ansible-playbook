@@ -8,6 +8,10 @@
    - php-soap
    - php-pgsql
    - php-gd
-
-
-
+   - php-mbstring
+   - php-mcrypt
+   - php-json
+   - php-curl
+   - php-redis
+   - php-memcache
+   - php-xsl

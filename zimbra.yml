@@ -1,0 +1,41 @@
+---
+- hosts: local
+  sudo: yes
+  vars:
+    zimbra_download_url: https://files.zimbra.com/downloads/8.6.0_GA/zcs-8.6.0_GA_1153.UBUNTU14_64.20141215151116.tgz
+    zimbra_file: zcs-8.6.0_GA_1153.UBUNTU14_64.20141215151116
+    zimbra_256sum_file: e22789cb66cf0b89dc93941ca913b81e4b4c468d235fa4c173f71f1027cdb256
+    zimbra_password: Passw0rd
+    zimbra_default_domain: 'mydom.com'
+    zimbra_hostname: 'zibmra'
+    zimbra_domains:
+      - name: 'mydom.com'
+        o: 'My Dom'
+        accounts:
+          - name: 'paul@mydom.com'
+            zimbra_is_admin_account: TRUE
+            password: Passw0rd
+
+      - name: 'mydom2.com'
+        o: 'My dom 2'
+
+      - name: 'mydom3.com'
+        o: 'My dom 3'
+        accounts:
+          - name: 'admin@mydom3.com'
+            password: Passw0rd
+            zimbra_is_domain_admin_account: TRUE
+
+        distribution_lists:
+          - name: 'user@mydom3.com'
+            members:
+              - '1@mydom4.com'
+              - '2@mydom3.com'
+            authorized_senders:
+              - 'paul@mydom.com'
+
+      - name: 'empty.com'
+        o: 'My dom 4'
+
+  roles:
+    - role: zimbra
